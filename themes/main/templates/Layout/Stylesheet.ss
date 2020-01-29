@@ -21,53 +21,27 @@
 						<div class="ss-frm__palette bg--1">
 							<div class="vertical-parent">
 								<div class="vertical-align">
-									<p>R255</p>
-									<p>G255</p>
-									<p>B255</p>
+									<p>R244</p>
+									<p>G117</p>
+									<p>B38</p>
 								</div>
 							</div>
 						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
+						<p class="bold">Orange</p>
+						<p>#F47526</p>
 					</div>
 					<div class="ss-frm__paletteHolder frm-desc">
-						<div class="ss-frm__palette bg--1">
+						<div class="ss-frm__palette bg--2">
 							<div class="vertical-parent">
 								<div class="vertical-align">
-									<p>R255</p>
-									<p>G255</p>
-									<p>B255</p>
+									<p>R51</p>
+									<p>G141</p>
+									<p>B198</p>
 								</div>
 							</div>
 						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
-					</div>
-					<div class="ss-frm__paletteHolder frm-desc">
-						<div class="ss-frm__palette bg--1">
-							<div class="vertical-parent">
-								<div class="vertical-align">
-									<p>R255</p>
-									<p>G255</p>
-									<p>B255</p>
-								</div>
-							</div>
-						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
-					</div>
-					<div class="ss-frm__paletteHolder frm-desc">
-						<div class="ss-frm__palette bg--1">
-							<div class="vertical-parent">
-								<div class="vertical-align">
-									<p>R255</p>
-									<p>G255</p>
-									<p>B255</p>
-								</div>
-							</div>
-						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
+						<p class="bold">Blue</p>
+						<p>#1D8DC6</p>
 					</div>
 				</div>
 				<div class="frm-desc bold s-margin-tb">
@@ -75,33 +49,59 @@
 				</div>
 				<div class="inlineBlock-parent">
 					<div class="ss-frm__paletteHolder frm-desc">
-						<div class="ss-frm__palette bg--1">
+						<div class="ss-frm__palette bg--3">
 							<div class="vertical-parent">
 								<div class="vertical-align">
-									<p>R255</p>
-									<p>G255</p>
-									<p>B255</p>
+									<p>R246</p>
+									<p>G176</p>
+									<p>B38</p>
 								</div>
 							</div>
 						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
+						<p class="bold">Yellow</p>
+						<p>#FCB127</p>
 					</div>
 					<div class="ss-frm__paletteHolder frm-desc">
-						<div class="ss-frm__palette bg--1">
+						<div class="ss-frm__palette bg--4">
 							<div class="vertical-parent">
 								<div class="vertical-align">
-									<p>R255</p>
-									<p>G255</p>
-									<p>B255</p>
+									<p>R229</p>
+									<p>G78</p>
+									<p>B38</p>
 								</div>
 							</div>
 						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
+						<p class="bold">Red</p>
+						<p>#E42426</p>
 					</div>
 					<div class="ss-frm__paletteHolder frm-desc">
-						<div class="ss-frm__palette bg--1">
+						<div class="ss-frm__palette bg--5">
+							<div class="vertical-parent">
+								<div class="vertical-align">
+									<p>R91</p>
+									<p>G91</p>
+									<p>B91</p>
+								</div>
+							</div>
+						</div>
+						<p class="bold">Black</p>
+						<p>#5C5C5C</p>
+					</div>
+					<div class="ss-frm__paletteHolder frm-desc">
+						<div class="ss-frm__palette bg--6">
+							<div class="vertical-parent">
+								<div class="vertical-align">
+									<p>R195</p>
+									<p>G196</p>
+									<p>B195</p>
+								</div>
+							</div>
+						</div>
+						<p class="bold">Gray</p>
+						<p>#C4C4C4</p>
+					</div>
+					<div class="ss-frm__paletteHolder frm-desc">
+						<div class="ss-frm__palette bg--7">
 							<div class="vertical-parent">
 								<div class="vertical-align">
 									<p>R255</p>
@@ -110,8 +110,8 @@
 								</div>
 							</div>
 						</div>
-						<p class="bold">Color 1</p>
-						<p>#dddddd</p>
+						<p class="bold">White</p>
+						<p>#FFFFFF</p>
 					</div>
 				</div>	
 			</div
@@ -128,8 +128,8 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
-						<p class="color--gray">62px</p>
+						<p>Flama</p>
+						<p class="color--gray">48px</p>
 					</div>
 				</div>
 				<div class="ss-frm__tp-col">
@@ -141,8 +141,8 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
-						<p class="color--gray">48px</p>
+						<p>Flama</p>
+						<p class="color--gray">39px</p>
 					</div>
 				</div>
 				<div class="ss-frm__tp-col">
@@ -154,8 +154,8 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
-						<p class="color--gray">40px</p>
+						<p>Flama</p>
+						<p class="color--gray">31px</p>
 					</div>
 				</div>
 				<div class="ss-frm__tp-col">
@@ -167,8 +167,8 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
-						<p class="color--gray">32px</p>
+						<p>Flama</p>
+						<p class="color--gray">25px</p>
 					</div>
 				</div>
 				<div class="ss-frm__tp-col">
@@ -180,8 +180,8 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
-						<p class="color--gray">25px</p>
+						<p>Flama</p>
+						<p class="color--gray">20px</p>
 					</div>
 				</div>
 				<div class="ss-frm__tp-col">
@@ -193,12 +193,12 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
-						<p class="color--gray">20px</p>
+						<p>Flama</p>
+						<p class="color--gray">16px</p>
 					</div>
 				</div>
 				<div class="ss-frm__tp-col">
-					<div class="frm-desc mb-0">
+					<div class="frm-title mb-0">
 						<div class="vertical-parent">
 							<div class="vertical-align align-b">
 								<p>Paragraph</p>
@@ -206,7 +206,7 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
+						<p>Flama</p>
 						<p class="color--gray">16px</p>
 					</div>
 				</div>
@@ -219,11 +219,38 @@
 						</div>
 					</div>
 					<div class="frm-desc">
-						<p>Font 1</p>
+						<p>Flama</p>
 						<p class="color--gray">13px</p>
 					</div>
 				</div>
-				
+				<div class="ss-frm__tp-col">
+					<div class="frm-title mb-0">
+						<div class="vertical-parent">
+							<div class="vertical-align align-b">
+								<p>Font Weight</p>
+							</div>
+						</div>
+					</div>
+					<div class="frm-desc">
+						<p class="light">Flama Light</p>
+						<p>Flama Normal</p>
+						<p class="bold">Flama Bold</p>
+					</div>
+				</div>
+				<div class="ss-frm__tp-col">
+					<div class="frm-title mb-0">
+						<div class="vertical-parent">
+							<div class="vertical-align align-b">
+								<p>Font Style</p>
+							</div>
+						</div>
+					</div>
+					<div class="frm-desc">
+						<p class="light italic">Flama Light Italic</p>
+						<p class="italic">Flama Normal Italic</p>
+						<p class="bold italic">Flama Bold Italic</p>
+					</div>
+				</div>
 			</div
 			><div class="ss-frm__col align-t">
 				<div class="frm-title ss-frm__title">
@@ -258,8 +285,20 @@
 					<p>Button</p>
 				</div>
 				<div class="inlineBlock-parent">
-					<div>
-						<a href="#" class="btn align-c">Read more</a>
+					<div class="s-margin-b">
+						<a href="#" class="btn align-c">Normal</a>
+					</div>
+					<div class="s-margin-b">
+						<a href="#" class="btn align-c type-1">Type-1</a>
+					</div>
+					<div class="s-margin-b">
+						<a href="#" class="btn align-c type-2">Type-2</a>
+					</div>
+					<div class="s-margin-b">
+						<a href="#" class="btn align-c type-yellow">Type-Yellow</a>
+					</div>
+					<div class="s-margin-b">
+						<a href="#" class="btn align-c type-red">Type-Red</a>
 					</div>
 				</div>
 			</div>

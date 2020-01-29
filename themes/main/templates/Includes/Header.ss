@@ -1,18 +1,40 @@
 <% if ClassName != 'Page' %>
 <div class="hdr-frame">
-	<div class="width--100 align-c">
-		<p>This is header</p>
+	<div>
+		<div class="width--100 hdr__topCon">
+			<div class="width--90 align-r inlineBlock ma-auto">
+				<a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+			</div>
+		</div>
+		<div class="width--100 hdr__midCon">
+			<div class="width--90 ma-auto vertical-parent">
+				<div class="vertical-align">
+					<div class="hdr__midContent">
+						<div>
+							<img src="$themeDir/images/logo.png">
+						</div>
+						<ul class="inlineBlock-parent">
+							<li class="hdr__link $FirstLast $LinkOrSection"><a href="/" title="Home">Home</a></li>
+							<li class="hdr__link"><a href="#" title="About Us">About Us</a></li>
+							<li class="hdr__link"><a href="#" title="Our Business">Our Business</a></li>
+							<li class="hdr__link"><a href="#" title="Sustainability">Sustainability</a></li>
+							<li class="hdr__link"><a href="#" title="Investor Center">Investor Center</a></li>
+							<li class="hdr__link"><a href="#" title="Careers<">Careers</a></li>
+							<li class="hdr__link"><a href="#" title="Contact Us">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="width--100 hdr__botCon">
+			<div class="width--33"></div>
+			<div class="width--33"></div>
+			<div class="width--33"></div>
+		</div>
 	</div>
 </div>
 <% end_if %>
-<%-- <% if ClassName == 'Page' %>
-<header class="admin-nav">
-	<a href="$BaseHref">
-		<% loop HeaderFooter %>
-		<div class="hdr-frame__logo">
-			<img src="$HeaderLogo.URL" class="img-fit">
-		</div>
-		<% end_loop %>
-	</a>
-</header>
-<% end_if %> --%>

@@ -11,36 +11,38 @@
  * Add all the colors that you needed. Format: color--[colorname]
  */
 /* Primary Colors */
-$color--primary1: #b87e2f;
-$color--primary2: '';
+$color--primary1: #F47526;		//Orange
+$color--primary2: #1D8DC6;		//Blue
 
 /* Secondary Colors */
-$color--blue: #2f5094;
-$color--gray: #b9b9b9;
-$color--white: #ffffff;
+$color--yellow: #FCB127;		//Yellow | Accent Color
+$color--red: #E42426;			//Red | Button Color
+$color--black: #5C5C5C;			//Paragraph Text, Frame Title
+$color--gray: #C4C4C4;			//Frame subtitle, inactive element
+$color--white: #ffffff;			//Button Text
+$color--lighterGray: #EEEEEE;
 
 
 /** 
  * FONTS
  * --
  */
-$font--1: '';	
-$font--2: '';
+$font--1: 'flama' sans-serif;			//H1, H2 | Banner Title, Frame Title
 
 /** 
  * FONTS SIZE
  * --
  */
-$font-size-default: 1em;			//16px | Default
+$font-size-default: 1rem;			//16px | Default
 
-$font-size-largest: 3.815em;		//61.04px | H1, Banner Text
-$font-size-larger: 3.052em;			//48.83px | H2, Inner Banner Title
-$font-size-large: 2.441em;			//39.06px | H3, Frame Subtitle
-$font-size-medium: 1.953em;			//31.25px | H4, Banner Subtitle
-$font-size-small: 1.563em;			//25px | H5
-$font-size-smaller: 1.25em;			//20px | H6 | Small, Body Subtext, Button, Input
+$font-size-largest: 3rem;			//48px | H1, Banner Text
+$font-size-larger: 2.438rem;		//39px | H2, Inner Banner Title
+$font-size-large: 1.938rem;			//31px | H3, Frame Subtitle
+$font-size-medium: 1.563rem;		//25px | H4, Banner Subtitle
+$font-size-small: 1.250rem;			//20px | H5
+$font-size-smaller: 1rem;			//16px | H6 | Small, Body Subtext, Button, Input
 
-$font-size-smallest: 0.8em;			//12.80px | Small | Footer
+$font-size-smallest: 0.813rem;		//13px | Small | Footer
 
 
 /** 

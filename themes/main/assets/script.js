@@ -23,39 +23,169 @@ var app = {
 
 	setup: {
 
-		menu: function () {},
+		menu: function () {
+			function changeHeader() {
+				var window_top = $(window).scrollTop();
+				var trigger__top = $('.frame1').offset().top + 100;
 
-		homepage: function () {}
-
-	},
-
-	accordion: {
-		/**
-  * ACCORDION: Slide down & up effect
-  * - To take effect, must identify the button, holder/container, and element
-  * - Add data-attribute to the button w/c is: data-collapse-id
-  * - To execute (sample): app.accordion.init($('.faq__question'), 'faq__qa', 'faq__answer');
-  **/
-		init: function (button, elemHolder, hiddenElem) {
-			var btn = button,
-			    holder = elemHolder,
-			    hidden_element = hiddenElem;
-
-			btn.on('click', function () {
-				var id = $(this).data('accordion-id');
-				if ($('#' + id).hasClass('is-active')) {
-					$('#' + id + ' .' + hidden_element).slideUp(300);
-					$('.' + holder).removeClass('is-active');
+				if (window_top > trigger__top) {
+					$('.hdr-frame').addClass('changeHeader');
+					$('.hdr-frame .hdr__topCon').slideUp(300);
 				} else {
-					$('.' + holder).removeClass('is-active');
-					$('.' + holder + ' .' + hidden_element).slideUp(300);
-
-					$('#' + id).addClass('is-active');
-					$('#' + id + ' .' + hidden_element).slideToggle(300);
+					$('.hdr-frame').removeClass('changeHeader');
+					$('.hdr-frame .hdr__topCon').slideDown(300);
 				}
+			}
+
+			$(function () {
+				$(window).scroll(changeHeader);
+				changeHeader();
 			});
+		},
+
+		homepage: function () {
+
+			$('.hm1__sliderCon').slick({
+				dots: true,
+				arrows: false,
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 300,
+				autoplay: false,
+				autoplaySpeed: 5000
+			});
+
+			$('.hm1__sliderCon').on('afterChange init', function (event, slick, direction) {
+				// console.log('afterChange/init', event, slick, slick.$slides);
+				// remove all prev/next
+				setTimeout(function () {
+					$('.hm1__bgWhite').removeClass('active');
+					$('.hm1__bgRed').removeClass('active');
+					$('.hm1__sliderListCon .frm-cntnr').removeClass('active');
+				}, 1200);
+			}).on('beforeChange', function (event, slick) {
+				// optional, but cleaner maybe
+				// remove all prev/next
+				setTimeout(function () {
+					$('.hm1__bgWhite').addClass('active');
+					$('.hm1__bgRed').addClass('active');
+					$('.hm1__sliderListCon .frm-cntnr').addClass('active');
+				}, 0);
+			});
+
+			//ticking machine
+			var percentTime;
+			var tick;
+			var time = .1;
+			var progressBarIndex = 0;
+
+			$('.progressBarContainer .progressBar').each(function (index) {
+				var progress = "<div class='inProgress inProgress" + index + "'></div>";
+				$(this).html(progress);
+			});
+
+			function startProgressbar() {
+				resetProgressbar();
+				percentTime = 0;
+				tick = setInterval(interval, 10);
+			}
+
+			function interval() {
+				if ($('.hm1__sliderListCon[data-slick-index="' + progressBarIndex + '"]').attr("aria-hidden") === "true") {
+					progressBarIndex = $('.hm1__sliderListCon[aria-hidden="false"]').data("slickIndex");
+					startProgressbar();
+				} else {
+					percentTime += 1 / (time + 5);
+					$('.inProgress' + progressBarIndex).css({
+						width: percentTime + "%"
+					});
+					if (percentTime >= 100) {
+						$('.hm1__sliderCon').slick('slickNext');
+						progressBarIndex++;
+						if (progressBarIndex > 2) {
+							progressBarIndex = 0;
+						}
+						startProgressbar();
+					}
+				}
+			}
+
+			function resetProgressbar() {
+				$('.inProgress').css({
+					width: 0 + '%'
+				});
+				clearInterval(tick);
+			}
+			startProgressbar();
+			// End ticking machine
+
+			$('.item').click(function () {
+				clearInterval(tick);
+				var goToThisIndex = $(this).find("span").data("slickIndex");
+				$('.hm1__sliderCon').slick('slickGoTo', goToThisIndex, false);
+				startProgressbar();
+			});
+
+			$('.hm3__textInner .hm3__arrow').on('click', function () {
+				$(this).parent().parent().fadeOut(300);
+				setTimeout(function () {
+					$(this).parent().parent().siblings('.hm3__textPrev').fadeIn(300);
+				}.bind(this), 300);
+			});
+
+			$('.hm3__textPrev .hm3__arrow').on('click', function () {
+				$(this).parent().fadeOut(300);
+				setTimeout(function () {
+					$(this).parent().siblings('.hm3__textCon').fadeIn(300);
+				}.bind(this), 300);
+			});
+
+			$('.hm5__sliderCon').slick({
+				dots: true,
+				arrows: false,
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 300,
+				autoplay: false,
+				autoplaySpeed: 5000
+			});
+
+			var hm6 = $('.hm-frame6 .width--45').height();
+			$('.hm-frame6 .width--55').height(hm6);
 		}
+
 	},
+
+	/*accordion: {*/
+	/**
+ * ACCORDION: Slide down & up effect
+ * - To take effect, must identify the button, holder/container, and element
+ * - Add data-attribute to the button w/c is: data-collapse-id
+ * - To execute (sample): app.accordion.init($('.faq__question'), 'faq__qa', 'faq__answer');
+ **/
+	/*init: function(button, elemHolder, hiddenElem) {
+ 	var btn = button,
+ 		holder = elemHolder,
+ 		hidden_element = hiddenElem;
+ 		btn.on('click', function() {
+ 		var id = $(this).data('accordion-id');
+ 		if($('#'+id).hasClass('is-active')) {
+ 			$('#'+id+' .'+hidden_element).slideUp(300);
+ 			$('.'+holder).removeClass('is-active');
+ 			
+ 		} else {
+ 			$('.'+holder).removeClass('is-active');
+ 			$('.'+holder+' .'+hidden_element).slideUp(300);
+ 			
+ 			$('#'+id).addClass('is-active');
+ 			$('#'+id+' .'+hidden_element).slideToggle(300);
+ 		}
+ 		
+ 	});
+ }
+ },*/
 
 	form: {
 		/**

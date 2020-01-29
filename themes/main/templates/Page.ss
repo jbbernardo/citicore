@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
         <% base_tag %>
@@ -29,6 +29,13 @@
             $ExtraMeta
         <% end_if %>
 
+        <%-- Font --%>
+        <link rel="stylesheet" href="$ThemeDir/fonts/flamaBasic/stylesheet.css">
+        <link rel="stylesheet" href="$ThemeDir/fonts/flamaBasicItalic/stylesheet.css">
+        <link rel="stylesheet" href="$ThemeDir/fonts/flamaBold/stylesheet.css">
+        <link rel="stylesheet" href="$ThemeDir/fonts/flamaBoldItalic/stylesheet.css">
+        <link rel="stylesheet" href="$ThemeDir/fonts/flamaLight/stylesheet.css">
+        <link rel="stylesheet" href="$ThemeDir/fonts/flamaLightItalic/stylesheet.css">
         
         <!-- Ionicon -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
@@ -119,16 +126,15 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <%--  --%>
 
-        <!-- Script -->
-        <script type="text/javascript" src="$ThemeDir/assets/vendor.js"></script>
-        <script type="text/javascript" src="$ThemeDir/assets/app.js"></script>
-        <script type="text/javascript" src="$ThemeDir/assets/script.js"></script>
-
-
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <!-- Script -->
+        <script type="text/javascript" src="$ThemeDir/assets/vendor.js"></script>
+        <script type="text/javascript" src="$ThemeDir/assets/app.js"></script>
+        <script type="text/javascript" src="$ThemeDir/assets/script.js"></script>
 
         <!-- Validate -->
         <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>

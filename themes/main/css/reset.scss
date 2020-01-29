@@ -13,23 +13,13 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
     border: 0;
     outline: 0;
     vertical-align: baseline;
-    font-family: Arial, sans-serif;
+    font-family: $font--1;
     font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6  {
-    font-family: Arial, sans-serif;
+    font-family: $font--1;
 }
-
-h1 { font-size: 2em; }
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.6em; }
-h4 { font-size: 1.4em; }
-h5 { font-size: 1.2em; }
-h6 { font-size: 1em; }
-p { font-size: 1em; }
-span { font-size: .9em; }
-label { font-size: .85em; }
 
 a {
     text-decoration: none;
@@ -43,16 +33,12 @@ ul, li {
 
 strong, b {
     font-weight: bold;
-    font-family: Arial, sans-serif;
-}
-
-strong{
-    color: #000 !important;
+    font-family: $font--1;
 }
 
 input,
 textarea {
-    font-family: Arial, sans-serif;
+    font-family: $font--1;
 }
 
 table {
