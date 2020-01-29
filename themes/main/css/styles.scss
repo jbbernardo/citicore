@@ -23,13 +23,17 @@
 		.frm-cntnr {
 			position: relative;
 			z-index: 3;
-			width: 100%;
+			width: 85%;
 			height: auto;
 			opacity: 1;
 			@extend %trans-ease;
 
 			h1, p {
 				color: $color--white;
+			}
+
+			h1 {
+				line-height: 1.5;
 			}
 
 			&.active {
@@ -700,8 +704,12 @@
 				margin-bottom: 0;
 			}
 
-			h6 {
+			a {
+				@extend %trans-ease;
 
+				&:hover {
+					color: $color--red;
+				}
 			}
 
 			p {
@@ -716,6 +724,11 @@
 
 			i {
 				color: $color--red;
+			}
+
+			.fas.fa-phone {
+				transform: scale(-1, 1);
+				text-align: right;
 			}
 		}
 	}

@@ -74,6 +74,13 @@ var app = {
 				}, 0);
 			});
 
+			/*SETS ID TO ALL SIDE TAB*/
+			var numDetails = 0;
+			$('.hm-frame1 .item span').each(function () {
+				numDetails++;
+				$(this).attr('data-slick-index', numDetails - 1);
+			});
+
 			//ticking machine
 			var percentTime;
 			var tick;

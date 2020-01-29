@@ -3,11 +3,11 @@
 	<div>
 		<div class="width--100 hdr__topCon">
 			<div class="width--90 align-r inlineBlock ma-auto">
-				<a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-				<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-				<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-				<a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-				<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<% loop $HeaderFooter %>
+					<% loop $SocialLinks %>
+					<a href="$SlLink" target="_blank"><i class="$SlIcon"></i></a>
+					<% end_loop %>
+				<% end_loop %>
 			</div>
 		</div>
 		<div class="width--100 hdr__midCon">
