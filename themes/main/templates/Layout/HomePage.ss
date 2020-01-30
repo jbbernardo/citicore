@@ -38,29 +38,7 @@
 			<%-- <div id="map" class="map"></div> --%>
 		</div>
 	</div>
-	<% loop $getStore.Limit(1) %>
-					<div class="cntct-frame3__locHolder scroll-custom">
-						<div class="cntct-frame3__locTitle frm-title">
-							<p id="mapDataName">$Name</p>
-						</div>				
-						<div class="cntct-frame3__details">
-							<div class="frm-title">
-								<p>Address:</p>
-							</div>
-							<div class="frm-desc">
-								<p id="mapDataAddress">$Address</p>
-							</div>
-						</div>
-						<div class="cntct-frame3__details">
-							<div class="frm-title">
-								<p>Phone:</p>
-							</div>
-							<div class="frm-desc">
-								<p id="mapDataPhone">$Phone</p>
-							</div>
-						</div>				
-					</div>
-					<% end_loop %>
+	
 
 </section>
 <section id="ourbusiness" class="hm-frame3">
