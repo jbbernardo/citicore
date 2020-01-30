@@ -38,6 +38,30 @@
 			<%-- <div id="map" class="map"></div> --%>
 		</div>
 	</div>
+	<% loop $getStore.Limit(1) %>
+					<div class="cntct-frame3__locHolder scroll-custom">
+						<div class="cntct-frame3__locTitle frm-title">
+							<p id="mapDataName">$Name</p>
+						</div>				
+						<div class="cntct-frame3__details">
+							<div class="frm-title">
+								<p>Address:</p>
+							</div>
+							<div class="frm-desc">
+								<p id="mapDataAddress">$Address</p>
+							</div>
+						</div>
+						<div class="cntct-frame3__details">
+							<div class="frm-title">
+								<p>Phone:</p>
+							</div>
+							<div class="frm-desc">
+								<p id="mapDataPhone">$Phone</p>
+							</div>
+						</div>				
+					</div>
+					<% end_loop %>
+
 </section>
 <section id="ourbusiness" class="hm-frame3">
 	<div class="frm-cntnr width--85">
@@ -111,12 +135,6 @@
 <section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
 		<h4 class="m-margin-b bold lh-15 align-c slideUp">$Fr4Title</h4>
-		<% loop $getStore %>
-							<div class="frm-desc">
-								<p class="font-h cu-map__locator s-margin-b" data-name="$Name">$Name</p>
-							</div>
-						<% end_loop %>	
-
 		<% loop InvestorCenterPage %>
 		<div class="hm4__contentCon width--85 ma-auto">
 			<% loop Children %>
