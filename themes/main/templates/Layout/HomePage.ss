@@ -35,6 +35,7 @@
 		</div
 		><div class="width--50 fadeIn">
 			<div id="map" class="mapouter"></div>
+			<%-- <div id="map" class="map"></div> --%>
 		</div>
 	</div>
 </section>
@@ -110,6 +111,12 @@
 <section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
 		<h4 class="m-margin-b bold lh-15 align-c slideUp">$Fr4Title</h4>
+		<% loop $getStore %>
+							<div class="frm-desc">
+								<p class="font-h cu-map__locator s-margin-b" data-name="$Name">$Name</p>
+							</div>
+						<% end_loop %>	
+
 		<% loop InvestorCenterPage %>
 		<div class="hm4__contentCon width--85 ma-auto">
 			<% loop Children %>

@@ -431,8 +431,16 @@
 		.hm4__listCon {
 			width: 30%;
 
-			h6 {
+			&:nth-child(1) h6 {
 
+			}
+
+			&:nth-child(2) h6 {
+				color: $color--yellow;
+			}
+
+			&:nth-child(3) h6 {
+				color: $color--primary2;
 			}
 		}
 
