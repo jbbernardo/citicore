@@ -24,36 +24,64 @@ var app = {
 	setup: {
 
 		menu: function () {
-			function changeHeader() {
-				var window_top = $(window).scrollTop();
-				var trigger__top = $('.frame1').offset().top + 100;
 
-				if (window_top > trigger__top) {
-					$('.hdr-frame').addClass('changeHeader');
-					$('.hdr-frame .hdr__topCon').slideUp(300);
+			//Calls the function on load to switch layout
+			headerMobile();
+
+			//Calls the function on resize to switch layout
+			window.addEventListener("resize", headerMobile);
+			function headerMobile() {
+				var width = $(window).width();
+				if (width <= 1024) {
+					$('.ftr__topCon h6').click(function () {
+						$(this).siblings('ul').slideToggle(300);
+						$(this).toggleClass('active');
+					});
 				} else {
-					$('.hdr-frame').removeClass('changeHeader');
-					$('.hdr-frame .hdr__topCon').slideDown(300);
-				}
-			}
+					function changeHeader() {
+						var window_top = $(window).scrollTop();
+						var trigger__top = $('.frame1').offset().top + 100;
 
-			$(function () {
-				$(window).scroll(changeHeader);
-				changeHeader();
+						if (window_top > trigger__top) {
+							$('.hdr-frame').addClass('changeHeader');
+							$('.hdr-frame .hdr__topCon').slideUp(300);
+						} else {
+							$('.hdr-frame').removeClass('changeHeader');
+							$('.hdr-frame .hdr__topCon').slideDown(300);
+						}
+					}
+
+					$(function () {
+						$(window).scroll(changeHeader);
+						changeHeader();
+					});
+				}
+			};
+
+			$('#nav-icon').click(function () {
+				$(this).toggleClass('open');
+				$(this).parent().toggleClass('active');
+				$('.hdr__topCon').toggleClass('active');
 			});
 		},
 
 		homepage: function () {
 
 			$('.hm1__sliderCon').slick({
-				dots: true,
+				dots: false,
 				arrows: false,
 				infinite: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				speed: 300,
 				autoplay: false,
-				autoplaySpeed: 5000
+				autoplaySpeed: 5000,
+				responsive: [{
+					breakpoint: 769,
+					settings: {
+						adaptiveHeight: true
+					}
+				}]
 			});
 
 			$('.hm1__sliderCon').on('afterChange init', function (event, slick, direction) {

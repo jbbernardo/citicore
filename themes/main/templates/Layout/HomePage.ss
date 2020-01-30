@@ -1,4 +1,4 @@
-<section class="hm-frame1 frame1">
+<section id="home" class="hm-frame1 frame1">
 	<div class="hm1__sliderCon">
 		<% loop FrameSliders %>
 		<div class="hm1__sliderListCon">
@@ -23,7 +23,7 @@
 	<div class="hm1__bgWhite"></div>
 	<div class="hm1__bgRed"></div>
 </section>
-<section class="hm-frame2 frm-padding">
+<section id="aboutus" class="hm-frame2 frm-padding">
 	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--50">
 			<h6 class="type-1">$Fr2FrameTitle</h6>
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 </section>
-<section class="hm-frame3">
+<section id="ourbusiness" class="hm-frame3">
 	<div class="frm-cntnr width--85">
 		<div class="hm3__titleCon l-margin-b align-c">
 			<h4 class="m-margin-b bold lh-15 type-white">$Fr3Title</h4>
@@ -107,7 +107,7 @@
 	</div>
 	<div class="hm3__bgGray"></div>
 </section>
-<section class="hm-frame4 frm-padding">
+<section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
 		<h4 class="m-margin-b bold lh-15 align-c">$Fr4Title</h4>
 		<% loop InvestorCenterPage %>
@@ -132,7 +132,7 @@
 		<% end_loop %>
 	</div>
 </section>
-<section class="hm-frame5">
+<section id="sustainability" class="hm-frame5">
 	<div class="frm-cntnr width--80 inlineBlock-parent">
 		<div class="width--45">
 			<h6 class="type-white">$Fr5FrameTitle</h6>
@@ -160,7 +160,7 @@
 	</div>
 	<div class="hm5__bgGray"></div>
 </section>
-<section class="hm-frame6 frm-padding">
+<section id="contactus" class="hm-frame6 frm-padding">
 	<div class="frm-cntnr width--80 inlineBlock-parent">
 		<div class="width--55">
 			<div class="hm6__contentList" style="background-image: url('$Fr6Img1.URL')">
@@ -174,7 +174,9 @@
 			</div>
 		</div
 		><div class="width--45">
-			<img src="$themeDir/images/logo.png">
+			<% loop HeaderFooter %>
+			<img src="$HeaderLogo.URL">
+			<% end_loop %>
 			<div class="hm6__contactList">
 				<h6 class="bold">$Fr6CntTitle1</h6>
 				<p><span><i class="fas fa-user-alt"></i></span>$Fr6CntName1</p>

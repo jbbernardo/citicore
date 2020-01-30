@@ -9,7 +9,7 @@
 			</div
 			><div class="width--45 inlineBlock-parent">
 				<div class="width--40 align-t">
-					<h6>$FtrTitle2</h6>
+					<h6>$FtrTitle2 <span class="ftr__arrow"></span></h6>
 					<ul>
 						<li class="ftr__link"><a href="/">Home</a></li>
 						<li class="ftr__link"><a href="#">About Us</a></li>
@@ -21,7 +21,7 @@
 					</ul>
 				</div
 				><div class="width--60 align-t">
-					<h6>$FtrTitle3</h6>
+					<h6>$FtrTitle3 <span class="ftr__arrow"></span></h6>
 					<ul>
 						<li class="ftr__contactLink">
 							<i class="fas fa-map-marker-alt"></i>
