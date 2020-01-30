@@ -117,7 +117,7 @@ function setupMapSelect() {
 
 function setupMapClick() {
 
-    $('.cu-map__locator').each(function() {
+    $('.mapouter').each(function() {
         
         $(this).on('click', function() {
 
@@ -165,7 +165,7 @@ function dropMarker() {
     markers[genIndex] = new google.maps.Marker({
         position: new google.maps.LatLng(mapItems[genIndex].lat, mapItems[genIndex].lng),
         map: map,
-        title: mapItems[genIndex].name,
+        title: mapItems[genIndex].id,
         // icon: iconImage,
         icon: mapItems[genIndex].mapMarker,
         animation: google.maps.Animation.DROP,          
@@ -185,18 +185,39 @@ function bindMarker(marker) {
 }
 
 function centerMapOnMarker(marker) {
-    map.setZoom(15);
+    map.setZoom(5);
     map.panTo(marker.getPosition());
+    console.log(mapItems[genIndex].id);
 }
+
+/*toggleInfoWindow: function (marker, idx) {
+    console.log(marker);
+    this.infoWindowPos = {
+          lat: parseFloat(marker.latitude), 
+          lng: parseFloat(marker.longitude)
+      };
+
+    this.infoContent = "<h4>"+ marker.name +"</h4>" 
+    +"<p>Address: <b>"+ marker.address +"</b></p>"
+    +"<p>Contact Number: <b>"+ marker.contact_number +"</b></p>";
+
+    //check if its the same marker that was selected if yes toggle
+    if (this.currentMidx == idx) {
+        this.infoWinOpen = !this.infoWinOpen;
+    } else {
+        this.infoWinOpen = true;
+        this.currentMidx = idx;
+    }
+ },*/
 
 function setMapPanel(marker) {
 
     $('#mapDataName').text(marker.PRXData.name);
-    $('#mapDataDetails').text(marker.PRXData.details);
+    /*$('#mapDataDetails').text(marker.PRXData.details);*/
     $('#mapDataAddress').html(marker.PRXData.address);
-    $('#mapEmail').text(marker.PRXData.email);
+    /*$('#mapEmail').text(marker.PRXData.email);
     $('#mapDataPhone').text(marker.PRXData.phone);
-    $('#mapDataPPEmail').text(marker.PRXData.ppemail);
+    $('#mapDataPPEmail').text(marker.PRXData.ppemail);*/
 
     if($('#mapInfo').is(':hidden')) {
         TweenLite.to('#mapInfo', 1, {

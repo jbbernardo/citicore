@@ -185,6 +185,7 @@
             var mapItems = [
                 <% loop $getStore %>
                 {
+                    id: '$ID',
                     name: '$Name',
                     details: '$Details',
                     address: '$TrimAddress',

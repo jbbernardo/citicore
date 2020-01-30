@@ -23,7 +23,7 @@ namespace {
 			'Lng' => 'Decimal(11,8)',
 			/*'Phone' => 'Varchar(20)',*/
 			/*'Details' => 'Text',*/
-			/*'Address' => 'Varchar(100)',*/
+			'Address' => 'Varchar(100)',
 			/*'SearchTags' => 'Varchar(255)',*/
 			'isActive' => 'Boolean'
 		);
@@ -68,6 +68,7 @@ namespace {
 			$fields->addFieldToTab('Root.Main', new ReadonlyField('SortOrder', 'Sort Order'));
 			/*$fields->addFieldToTab('Root.Main', new TextField('SearchTags', 'Search Tags'));*/
 			$fields->addFieldToTab('Root.Main', $pin = UploadField::create('Pin',' Pin'));
+			$fields->addFieldToTab('Root.Main', new TextareaField('Address', 'Address'));
 			// $fields->addFieldToTab('Root.Main', new Dropdownfield(
    //          'PlaceCategory',
    //          'Place Category',
@@ -77,7 +78,6 @@ namespace {
 			$fields->addFieldToTab('Root.Location', new TextField('Lat', 'Latituide'));
 			$fields->addFieldToTab('Root.Location', new TextField('Lng', 'Longitude'));
 			/*$fields->addFieldToTab('Root.Location', new TextareaField('Details', 'Route Details'));*/
-			/*$fields->addFieldToTab('Root.Location', new TextareaField('Address', 'Address'));*/
 			$fields->removeByName('SortOrder');
 
 			return $fields;
@@ -97,9 +97,9 @@ namespace {
 			return $actions;
 		}
 
-		/*public function getTrimAddress() {
+		public function getTrimAddress() {
 			return preg_replace('/\s+/', ' ', trim($this->Address));
-		}*/
+		}
 
 	}
 }
