@@ -189,6 +189,51 @@ var app = {
 
 			var hm6 = $('.hm-frame6 .width--45').height();
 			$('.hm-frame6 .width--55').height(hm6);
+
+
+			var controller = new ScrollMagic.Controller();
+
+			$('.hm3__contentCon').each(function() {
+				var tl = new TimelineMax({repeat:0, repeatDelay:0.5,});
+				tl.staggerFrom(".hm3__contentCon .page__gridChild", 1, {opacity:0}, 0.3,)
+				.staggerTo(".hm3__contentCon .page__gridChild", 1, {opacity:1}, 0.3,)
+
+				var fadeScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: .7,
+					reverse:false,
+				})
+				.setTween(tl)
+				.addTo(controller);
+			});
+
+			$('.hm4__contentCon').each(function() {
+				var tl = new TimelineMax({repeat:0, repeatDelay:0.5,});
+				tl.staggerFrom(".hm4__listCon", 1, {opacity:0}, 0.3,)
+				.staggerTo(".hm4__listCon", 1, {opacity:1}, 0.3,)
+
+				var fadeScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: .7,
+					reverse:false,
+				})
+				.setTween(tl)
+				.addTo(controller);
+			});
+
+			$('.hm-frame6 .width--55').each(function() {
+				var tl = new TimelineMax({repeat:0, repeatDelay:0.5,});
+				tl.staggerFrom(".hm6__contentList", 1, {opacity:0}, 0.3,)
+				.staggerTo(".hm6__contentList", 1, {opacity:1}, 0.3,)
+
+				var fadeScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: .7,
+					reverse:false,
+				})
+				.setTween(tl)
+				.addTo(controller);
+			});
 		},
 
 	},
