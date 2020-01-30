@@ -49,8 +49,8 @@ namespace {
 
 		private static $searchable_fields = array(
 			'Name',
-			'Address',
-			'SearchTags'
+			/*'Address',*/
+			/*'SearchTags'*/
 		);
 
 		private static $defaults = array(
@@ -97,9 +97,9 @@ namespace {
 			return $actions;
 		}
 
-		public function getTrimAddress() {
+		/*public function getTrimAddress() {
 			return preg_replace('/\s+/', ' ', trim($this->Address));
-		}
+		}*/
 
 	}
 }
