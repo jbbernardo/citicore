@@ -26,23 +26,24 @@
 <section id="aboutus" class="hm-frame2 frm-padding">
 	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--50">
-			<h6 class="type-1">$Fr2FrameTitle</h6>
-			<h4 class="m-margin-b bold lh-15">$Fr2Title</h4>
-			<p>$Fr2Desc</p>
-			<div class="m-margin-t">
+			<h6 class="type-1 slideUp">$Fr2FrameTitle</h6>
+			<h4 class="m-margin-b bold lh-15 slideUp">$Fr2Title</h4>
+			<p class="slideUp">$Fr2Desc</p>
+			<div class="m-margin-t slideUp">
 				<a href="$Fr2BtnLink"><button class="btn type-yellow">$Fr2BtnText</button></a>
 			</div>
 		</div
-		><div class="width--50">
+		><div class="width--50 fadeIn">
 			<div id="map" class="mapouter"></div>
+			<%-- <div id="map" class="map"></div> --%>
 		</div>
 	</div>
 </section>
 <section id="ourbusiness" class="hm-frame3">
 	<div class="frm-cntnr width--85">
 		<div class="hm3__titleCon l-margin-b align-c">
-			<h4 class="m-margin-b bold lh-15 type-white">$Fr3Title</h4>
-			<p class="width--60 ma-auto type-white">$Fr3Desc</p>
+			<h4 class="m-margin-b bold lh-15 type-white slideUp">$Fr3Title</h4>
+			<p class="width--60 ma-auto type-white fadeIn">$Fr3Desc</p>
 		</div>
 		<div class="hm3__contentCon page-grid grid-3">
 			<div class="page__gridChild">
@@ -109,7 +110,13 @@
 </section>
 <section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
-		<h4 class="m-margin-b bold lh-15 align-c">$Fr4Title</h4>
+		<h4 class="m-margin-b bold lh-15 align-c slideUp">$Fr4Title</h4>
+		<% loop $getStore %>
+							<div class="frm-desc">
+								<p class="font-h cu-map__locator s-margin-b" data-name="$Name">$Name</p>
+							</div>
+						<% end_loop %>	
+
 		<% loop InvestorCenterPage %>
 		<div class="hm4__contentCon width--85 ma-auto">
 			<% loop Children %>
@@ -135,12 +142,12 @@
 <section id="sustainability" class="hm-frame5">
 	<div class="frm-cntnr width--80 inlineBlock-parent">
 		<div class="width--45">
-			<h6 class="type-white">$Fr5FrameTitle</h6>
-			<h4 class="m-margin-b bold lh-15 type-white">$Fr5Title</h4>
-			<p class="type-white">$Fr5Desc</p>
-			<a href="$Fr5BtnLink"><button class="btn type-white m-margin-t">$Fr5BtnText</button></a>
+			<h6 class="type-white slideUp">$Fr5FrameTitle</h6>
+			<h4 class="m-margin-b bold lh-15 type-white slideUp">$Fr5Title</h4>
+			<p class="type-white slideUp">$Fr5Desc</p>
+			<a href="$Fr5BtnLink"><button class="btn type-white m-margin-t slideUp">$Fr5BtnText</button></a>
 		</div
-		><div class="width--55">
+		><div class="width--55 fadeIn">
 			<div class="hm5__sliderCon">
 				<% loop FrameFiveSliders %>
 				<div class="hm5__sliderListCon">
@@ -175,21 +182,21 @@
 		</div
 		><div class="width--45">
 			<% loop HeaderFooter %>
-			<img src="$HeaderLogo.URL">
+			<img class="slideUp" src="$HeaderLogo.URL" alt="$HeaderLogo.Title">
 			<% end_loop %>
-			<div class="hm6__contactList">
+			<div class="hm6__contactList slideUp">
 				<h6 class="bold">$Fr6CntTitle1</h6>
 				<p><span><i class="fas fa-user-alt"></i></span>$Fr6CntName1</p>
 				<p><span><i class="fas fa-phone"></i></span><a href="tel:$Fr6CntNum2" target="_blank">$Fr6CntNum1</a></p>
 				<p><span><i class="fas fa-envelope"></i></i></span><a href="tel:$Fr6CntMail1" target="_blank">$Fr6CntMail1</a></p>
 			</div>
-			<div class="hm6__contactList">
+			<div class="hm6__contactList slideUp">
 				<h6 class="bold">$Fr6CntTitle2</h6>
 				<p><span><i class="fas fa-user-alt"></i></span>$Fr6CntName2</p>
 				<p><span><i class="fas fa-phone"></i></span><a href="tel:$Fr6CntNum2" target="_blank">$Fr6CntNum2</a></p>
 				<p><span><i class="fas fa-envelope"></i></i></span><a href="tel:$Fr6CntMail2" target="_blank">$Fr6CntMail2</a></p>
 			</div>
-			<div class="hm6__contactList">
+			<div class="hm6__contactList slideUp">
 				<h6 class="bold">$Fr6CntTitle3</h6>
 				<p><span><i class="fas fa-user-alt"></i></span>$Fr6CntName3</p>
 				<p><span><i class="fas fa-phone"></i></span><a href="tel:$Fr6CntNum3" target="_blank">$Fr6CntNum3</a></p>

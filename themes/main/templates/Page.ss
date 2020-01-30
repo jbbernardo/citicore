@@ -169,9 +169,9 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.8.1/jquery.hoverIntent.min.js"></script>
         
         <!-- Storelocator -->
-        <%-- // <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBKese9Nxt27v9smmicyvJ037PwXfGbe3E&sensor=true"></script> --%>
-        <%-- // <script type="text/javascript" src="$ThemeDir/js/vendor/chosen/chosen.jquery.min.js"></script> --%>
-        <%-- // <script type="text/javascript" src="$ThemeDir/js/storelocator.js"></script> --%>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKese9Nxt27v9smmicyvJ037PwXfGbe3E"></script>
+        <script type="text/javascript" src="$ThemeDir/js/vendor/chosen/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="$ThemeDir/js/storelocator.js"></script>
         
         <!-- Light Gallery -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.4/js/lightgallery.min.js"></script>
@@ -181,6 +181,22 @@
         <!-- Script -->
         <script type="text/javascript" src="$ThemeDir/js/animation.js"></script>
         
+        <script>
+            var mapItems = [
+                <% loop $getStore %>
+                {
+                    name: '$Name',
+                    details: '$Details',
+                    address: '$TrimAddress',
+                    phone: '$Phone',
+                    lat: $Lat,
+                    lng: $Lng,
+                    mapMarker: '$Pin.URL',
+                },
+                <% end_loop %>
+            ];
+        </script>
+
 
     </body>
 </html>

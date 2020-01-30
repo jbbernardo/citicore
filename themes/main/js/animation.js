@@ -13,23 +13,92 @@ var animate = {
 
         animateEvents: function() {
 
+
+
             // Init ScrollMagic
             var controller = new ScrollMagic.Controller();
 
-            $('.animate-up').each(function() {
+            /** 
+             * GENERAL : ANIMATIONS
+             */
+
+            $('.slideUp').each(function() {
                 var tl = new TimelineMax()
-                .fromTo(this, 1,
-                    { y: "40px", opacity: "0", ease:Power0.easeIn },
-                    { y: "0%", opacity: "1", ease:Power0.easeIn })
+                .fromTo(this, 0.50,
+                    { y: "20px", opacity: 0, ease:Power0.easeIn },
+                    { y: "0px", opacity: 1, ease:Power0.easeIn })
 
                 var fadeScene = new ScrollMagic.Scene({
                     triggerElement: this,
-                    triggerHook: .7,
-                    reverse:true,
+                    triggerHook: .8,
+                    reverse:false,
                     })
                     .setTween(tl)
                     .addTo(controller);
             });
-        },        
+
+            $('.slideDown').each(function() {
+                var tl = new TimelineMax()
+                .fromTo(this, 0.50,
+                    { y: "-20px", opacity: 0, ease:Power0.easeIn },
+                    { y: "0px", opacity: 1, ease:Power0.easeIn })
+
+                var fadeScene = new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: .8,
+                    reverse:false,
+                    })
+                    .setTween(tl)
+                    .addTo(controller);
+            });
+
+             $('.slideRight').each(function() {
+                var tl = new TimelineMax()
+                .fromTo(this, 0.50,
+                    { x: "-20px", opacity: 0, ease:Power0.easeIn },
+                    { x: "0px", opacity: 1, ease:Power0.easeIn })
+
+                var fadeScene = new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: .8,
+                    reverse:false,
+                    })
+                    .setTween(tl)
+                    .addTo(controller);
+            });
+
+             $('.slideLeft').each(function() {
+                var tl = new TimelineMax()
+                .fromTo(this, 0.50,
+                    { x: "20px", opacity: 0, ease:Power0.easeIn },
+                    { x: "0px", opacity: 1, ease:Power0.easeIn })
+
+                var fadeScene = new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: .8,
+                    reverse:false,
+                    })
+                    .setTween(tl)
+                    .addTo(controller);
+            });
+
+             $('.fadeIn').each(function() {
+                var tl = new TimelineMax()
+                .fromTo(this, 1,
+                    { x: "0px", opacity: 0, ease:Power0.easeIn },
+                    { x: "0px", opacity: 1, ease:Power0.easeIn })
+
+                var fadeScene = new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: .8,
+                    reverse:false,
+                    })
+                    .setTween(tl)
+                    .addTo(controller);
+            });
+            
+
+        },
+        
     },
 }
