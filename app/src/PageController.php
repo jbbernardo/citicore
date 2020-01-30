@@ -31,5 +31,29 @@ namespace {
             // See: https://docs.silverstripe.org/en/developer_guides/templates/requirements/
             Requirements::themedCSS("assets/app");
         }
+
+        /*public function isDev() {
+            return Director::isDev();
+        }*/
+
+        public function getHeaderFooter() {
+            return HeaderFooter::get();
+        }
+
+        public function getHomePage() {
+            return HomePage::get();
+        }
+
+        public function getInvestorCenterPage() {
+            return InvestorCenterPage::get();
+        }
+
+        public function getInvestorCenterCategoryPage() {
+            return InvestorCenterCategoryPage::get();
+        }
+
+        public function getInvestorCenterListPage() {
+            return InvestorCenterListPage::get();
+        }
     }
 }
