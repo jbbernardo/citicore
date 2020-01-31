@@ -448,8 +448,12 @@
 			align-items: center;
 			display: none;
 			height: 100%;
+			opacity: 0;
+			transition: opacity 0.3s ease;
 
 			&.active {
+				display: flex;
+				opacity: 1;
 			}
 
 			.hm3__arrow {
@@ -711,6 +715,7 @@
 }
 
 .hm-frame6 {
+	padding: 150px 0 70px;
 
 	.width--55 {
 		box-sizing: border-box;

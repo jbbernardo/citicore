@@ -92,7 +92,7 @@ namespace {
 
 
 			# SET FIELD DESCRIPTION 
-			$uploadf1->setDescription('Max file size: 2MB | Dimension: At Least 300px x 170px');
+			$uploadf1->setDescription('Max file size: 1MB | Dimension: At Least 300px x 170px');
 			
 			
 			# Set destination path for the uploaded images.

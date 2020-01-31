@@ -165,12 +165,12 @@ var app = {
 			$('.hm3__textInner .hm3__arrow').on('click', function (){
 				$(this).parent().parent().fadeOut(300);
 				setTimeout(function () {
-					$(this).parent().parent().siblings('.hm3__textPrev').fadeIn(300);
+					$(this).parent().parent().siblings('.hm3__textPrev').addClass('active');
 				}.bind(this), 300)
 			})
 
 			$('.hm3__textPrev .hm3__arrow').on('click', function (){
-				$(this).parent().fadeOut(300);
+				$(this).parent().removeClass('active');
 				setTimeout(function () {
 					$(this).parent().siblings('.hm3__textCon').fadeIn(300);
 				}.bind(this), 300)

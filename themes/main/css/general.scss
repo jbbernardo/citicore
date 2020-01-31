@@ -296,6 +296,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 
 			.hdr__link {
 				color: $color--black;
+
+				&:hover a, &.active a, &.section a {
+					cursor: pointer;
+					color: $color--red;
+					font-weight:bold;
+				}
 			}
 		}
 
@@ -373,7 +379,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 
 			&:hover a, &.active a, &.section a {
 				cursor: pointer;
-				color: $color--red;
+				color: $color--white;
 				font-weight:bold;
 			}
 		}
