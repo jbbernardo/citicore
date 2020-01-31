@@ -253,16 +253,32 @@
 
 	.hm2__mapDetailsCon {
 		position: absolute;
-		bottom: 0;
-		left: 30px;
+		top: 53%;
+		left: 40%;
+		right: 50%;
 		z-index: 10;
 		width: 200px;
 		height: auto;
+		margin: auto;
 		padding: 30px 10px;
 		text-align: center;
 		box-shadow: 0 0 4px 1px rgba(0,0,0,.25);
 		background-color: $color--white;
 		display: none;
+		transform: translateX(-50%);
+
+		&::before {
+			position: absolute;
+			top: -10px;
+			right: 30px;
+			display: block;
+			content: '';
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid $color--white;
+		}
 
 		h6 {
 
@@ -274,7 +290,7 @@
 
 		.hm2__div {
 			width: 70%;
-			height: 3px;
+			height: 2px;
 			margin: 20px auto;
 			background-color: $color--red;
 		}
