@@ -117,7 +117,7 @@ function setupMapSelect() {
 
 function setupMapClick() {
 
-    $('.mapouter').each(function() {
+    $('.cu-map__locator').each(function() {
         
         $(this).on('click', function() {
 
@@ -142,13 +142,14 @@ function loadMap() {
     var mapOptions = {
         center: new google.maps.LatLng(11.953225, 122.783834),
         zoom: 5,
-        scaleControl: true,
+        scaleControl: true
     };
 
     map = new google.maps.Map($("#map")[0], mapOptions);
 }
 
 var markers = [],
+    //iconImage = themeDir + '/images/store-locator/map-pin.png',
     genIndex = 0;
     
 function loadMarkers() {
@@ -165,8 +166,7 @@ function dropMarker() {
     markers[genIndex] = new google.maps.Marker({
         position: new google.maps.LatLng(mapItems[genIndex].lat, mapItems[genIndex].lng),
         map: map,
-        title: mapItems[genIndex].id,
-        // icon: iconImage,
+        title: mapItems[genIndex].name,
         icon: mapItems[genIndex].mapMarker,
         animation: google.maps.Animation.DROP,          
     });
@@ -178,46 +178,37 @@ function dropMarker() {
 }
 
 function bindMarker(marker) {
-    google.maps.event.addListener(marker, 'click', function() {
+    google.maps.event.addListener(marker, 'mouseover', function() {
         centerMapOnMarker(marker);
+        console.log(marker.PRXData.name);
+        $('div[title="' + marker.PRXData.name + '"]').addClass('target');
+
+        $('.hm2__mapDetailsCon').fadeIn(300);
+        setMapPanel(marker);
+    });
+
+    google.maps.event.addListener(marker, 'mouseout', function() {
+        centerMapOnMarker(marker);
+        console.log(marker.PRXData.name);
+        $('div[title]').removeClass('target');
+
+        $('.hm2__mapDetailsCon').fadeOut(300);
         setMapPanel(marker);
     }); 
 }
 
 function centerMapOnMarker(marker) {
     map.setZoom(5);
-    map.panTo(marker.getPosition());
-    console.log(mapItems[genIndex].id);
+    //map.panTo(marker.getPosition());
 }
-
-/*toggleInfoWindow: function (marker, idx) {
-    console.log(marker);
-    this.infoWindowPos = {
-          lat: parseFloat(marker.latitude), 
-          lng: parseFloat(marker.longitude)
-      };
-
-    this.infoContent = "<h4>"+ marker.name +"</h4>" 
-    +"<p>Address: <b>"+ marker.address +"</b></p>"
-    +"<p>Contact Number: <b>"+ marker.contact_number +"</b></p>";
-
-    //check if its the same marker that was selected if yes toggle
-    if (this.currentMidx == idx) {
-        this.infoWinOpen = !this.infoWinOpen;
-    } else {
-        this.infoWinOpen = true;
-        this.currentMidx = idx;
-    }
- },*/
 
 function setMapPanel(marker) {
 
     $('#mapDataName').text(marker.PRXData.name);
-    /*$('#mapDataDetails').text(marker.PRXData.details);*/
-    $('#mapDataAddress').html(marker.PRXData.address);
-    /*$('#mapEmail').text(marker.PRXData.email);
+    $('#mapDataAddress').html(nl2br(marker.PRXData.address));
+    $('#mapEmail').text(marker.PRXData.email);
     $('#mapDataPhone').text(marker.PRXData.phone);
-    $('#mapDataPPEmail').text(marker.PRXData.ppemail);*/
+    $('#mapDataPPEmail').text(marker.PRXData.ppemail);
 
     if($('#mapInfo').is(':hidden')) {
         TweenLite.to('#mapInfo', 1, {
@@ -255,7 +246,7 @@ if (typeof(Number.prototype.toRad) === "undefined") {
 function setupContactMap() {
     var mapOptions = {
         center: new google.maps.LatLng(contactLat, contactLng),
-        zoom: 15,
+        zoom: 5,
         scaleControl: true
     },
 
