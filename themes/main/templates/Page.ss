@@ -181,22 +181,6 @@
         <!-- Script -->
         <script type="text/javascript" src="$ThemeDir/js/animation.js"></script>
         
-        <script>
-            var mapItems = [
-                <% loop $getStore %>
-                {
-                    id: '$ID',
-                    name: '$Name',
-                    details: '$Details',
-                    address: '$TrimAddress',
-                    phone: '$Phone',
-                    lat: $Lat,
-                    lng: $Lng,
-                    mapMarker: '$Pin.URL',
-                },
-                <% end_loop %>
-            ];
-        </script>
 
 
     </body>

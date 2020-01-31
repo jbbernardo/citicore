@@ -30,15 +30,21 @@
 			<h4 class="m-margin-b bold lh-15 slideUp">$Fr2Title</h4>
 			<p class="slideUp">$Fr2Desc</p>
 			<div class="m-margin-t slideUp">
-				<a href="$Fr2BtnLink"><button class="btn type-yellow">$Fr2BtnText</button></a>
+				<a href="$Fr2BtnLink" class="frm-inlineBlock"><button class="btn type-yellow">$Fr2BtnText</button></a>
 			</div>
 		</div
 		><div class="width--50 fadeIn">
+			<% loop $getStore.Limit(1) %>
+			<div class="hm2__mapDetailsCon">
+				<h6 id="mapDataName" class="bold">$Name</h6>
+				<div class="hm2__div"></div>
+				<p id="mapDataAddress">$Address</p>
+			</div>
+			<% end_loop %>
 			<div id="map" class="mapouter"></div>
-			<%-- <div id="map" class="map"></div> --%>
 		</div>
 	</div>
-	
+
 
 </section>
 <section id="ourbusiness" class="hm-frame3">
@@ -141,7 +147,7 @@
 			<h6 class="type-white slideUp">$Fr5FrameTitle</h6>
 			<h4 class="m-margin-b bold lh-15 type-white slideUp">$Fr5Title</h4>
 			<p class="type-white slideUp">$Fr5Desc</p>
-			<a href="$Fr5BtnLink"><button class="btn type-white m-margin-t slideUp">$Fr5BtnText</button></a>
+			<a href="$Fr5BtnLink" class="frm-inlineBlock"><button class="btn type-white m-margin-t slideUp">$Fr5BtnText</button></a>
 		</div
 		><div class="width--55 fadeIn">
 			<div class="hm5__sliderCon">
@@ -201,3 +207,17 @@
 		</div>
 	</div>
 </section>
+
+<script type="text/javascript">
+    let mapItems = [
+        <% loop $getStore %>
+        {
+            name: '$Name',
+            address: '$Address',
+            lat: $Lat,
+            lng: $Lng,
+            mapMarker: '$Pin.URL',
+        },
+        <% end_loop %>
+    ];
+</script>
