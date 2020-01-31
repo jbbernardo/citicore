@@ -104,6 +104,8 @@ namespace {
 			'Fr3Img2' => Image::class,
 			'Fr3Img3' => Image::class,
 
+			'Fr5BG' => Image::class,
+
 			'Fr6Logo' => Image::class,
 			'Fr6Img1' => Image::class,
 			'Fr6Img2' => Image::class,
@@ -122,6 +124,8 @@ namespace {
 			'Fr3Img1',
 			'Fr3Img2',
 			'Fr3Img3',
+
+			'Fr5BG',
 
 			'Fr6Logo',
 			'Fr6Img1',
@@ -295,16 +299,16 @@ namespace {
 			));*/
 
 			# SET FIELD DESCRIPTION 
-			$uploadf3->setDescription('Max file size: 2MB | Dimension: At Least 1300px x 600px');
-			$uploadf3_1->setDescription('Max file size: 2MB | Dimension: At Least 360px x 300px');
-			$uploadf3_2->setDescription('Max file size: 2MB | Dimension: At Least 360px x 300px');
-			$uploadf3_3->setDescription('Max file size: 2MB | Dimension: At Least 360px x 300px');
+			$uploadf3->setDescription('Max file size: 1MB | Dimension: At Least 1300px x 600px');
+			$uploadf3_1->setDescription('Max file size: 1MB | Dimension: At Least 360px x 300px');
+			$uploadf3_2->setDescription('Max file size: 1MB | Dimension: At Least 360px x 300px');
+			$uploadf3_3->setDescription('Max file size: 1MB | Dimension: At Least 360px x 300px');
 
-			$uploadf5->setDescription('Max file size: 2MB | Dimension: At Least 1300px x 800px');
+			$uploadf5->setDescription('Max file size: 1MB | Dimension: At Least 1300px x 800px');
 
-			$uploadf6_1->setDescription('Max file size: 2MB | Dimension: At Least 600px x 200px');
-			$uploadf6_2->setDescription('Max file size: 2MB | Dimension: At Least 600px x 200px');
-			$uploadf6_3->setDescription('Max file size: 2MB | Dimension: At Least 600px x 200px');
+			$uploadf6_1->setDescription('Max file size: 1MB | Dimension: At Least 600px x 200px');
+			$uploadf6_2->setDescription('Max file size: 1MB | Dimension: At Least 600px x 200px');
+			$uploadf6_3->setDescription('Max file size: 1MB | Dimension: At Least 600px x 200px');
 			/*$desc->setDescription('Sample format: email@sample.com, email_2@sample.com');*/
 			
 			# Set destination path for the uploaded images.

@@ -129,8 +129,8 @@ namespace {
 
 			#Description
 			/*$desc->setDescription('Separate each descriptions with comma (,)');*/
-			$upload->setDescription('Max file size: 2MB');
-			$upload1->setDescription('Max file size: 2MB');
+			$upload->setDescription('Max file size: 1MB');
+			$upload1->setDescription('Max file size: 1MB');
 
 			$upload->setFolderName('headerfooter/');
 			$upload1->setFolderName('headerfooter/');

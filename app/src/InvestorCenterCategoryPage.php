@@ -77,9 +77,7 @@ namespace {
 			|-----------------------------------------------
 			| @Frame 1
 			|----------------------------------------------- */
-			$fields->addFieldsToTab('Root.Frame1', array(
-				$desc = new TextField('Test', 'Email Address'),
-			));
+			
 
 
 

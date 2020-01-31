@@ -169,7 +169,7 @@
 	</div>
 	<div class="hm5__bgGray"></div>
 </section>
-<section id="contactus" class="hm-frame6 frm-padding">
+<section id="contactus" class="hm-frame6">
 	<div class="frm-cntnr width--80 inlineBlock-parent">
 		<div class="width--55">
 			<div class="hm6__contentList" style="background-image: url('$Fr6Img1.URL')">
