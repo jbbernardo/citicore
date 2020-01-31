@@ -306,7 +306,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 
 	.hdr__topCon {
 		height: 30px;
-		@extend %trans-ease;
 
 		a {
 			margin-left: 15px;
