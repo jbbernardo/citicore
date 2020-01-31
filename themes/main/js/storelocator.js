@@ -178,28 +178,30 @@ function dropMarker() {
 }
 
 function bindMarker(marker) {
-    google.maps.event.addListener(marker, 'mouseover', function() {
+    google.maps.event.addListener(marker, 'click', function() {
         centerMapOnMarker(marker);
         console.log(marker.PRXData.name);
         $('div[title="' + marker.PRXData.name + '"]').addClass('target');
 
-        $('.hm2__mapDetailsCon').fadeIn(300);
+        $('.hm2__mapDetailsCon').show();
+
+        setTimeout(function () {
+            $('.hm2__mapDetailsCon').hide();
+        }, 1000)
         setMapPanel(marker);
     });
 
-    google.maps.event.addListener(marker, 'mouseout', function() {
-        centerMapOnMarker(marker);
-        console.log(marker.PRXData.name);
+    /*google.maps.event.addListener(marker, 'mouseout', function() {
         $('div[title]').removeClass('target');
 
-        $('.hm2__mapDetailsCon').fadeOut(300);
+        $('.hm2__mapDetailsCon').hide();
         setMapPanel(marker);
-    }); 
+    });*/ 
 }
 
 function centerMapOnMarker(marker) {
     map.setZoom(5);
-    //map.panTo(marker.getPosition());
+    map.panTo(marker.getPosition());
 }
 
 function setMapPanel(marker) {

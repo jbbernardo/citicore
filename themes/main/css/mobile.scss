@@ -24,9 +24,11 @@
 			margin: auto;
 			opacity: 0;
 			transition-delay: -1s;
+			pointer-events: none;
 
 			&.active {
 				opacity: 1;
+				pointer-events: auto;
 				transition-delay: 0.3s;
 			}
 
