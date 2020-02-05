@@ -8,7 +8,7 @@
 				<p>$FtrDesc1</p>
 			</div
 			><div class="width--45 inlineBlock-parent">
-				<div class="width--40 align-t">
+				<div class="width--40 align-t ftr__linkParent">
 					<h6>$FtrTitle2 <span class="ftr__arrow"></span></h6>
 					<ul>
 						<li class="ftr__link"><a href="/">Home</a></li>
@@ -20,7 +20,7 @@
 						<li class="ftr__link"><a href="#">Contact Us</a></li>
 					</ul>
 				</div
-				><div class="width--60 align-t">
+				><div class="width--60 align-t ftr__linkParent">
 					<h6>$FtrTitle3 <span class="ftr__arrow"></span></h6>
 					<ul>
 						<li class="ftr__contactLink">
