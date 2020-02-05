@@ -28,7 +28,7 @@ var app = {
 			function headerMobile(){
 				var width = $(window).width(); 
 				if (width <= 1024){
-					$('.ftr__topCon h6').click(function(){
+					$('.ftr__topCon h6').on('click', function(){
 						$(this).siblings('ul').slideToggle(300);
 						$(this).toggleClass('active');
 					});

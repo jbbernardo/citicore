@@ -597,6 +597,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 		}
 
 		h6 {
+			display: inline-block;
 			text-transform: uppercase;
 			margin-bottom: 5px;
 			font-weight: bold;
