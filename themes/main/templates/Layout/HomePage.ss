@@ -120,7 +120,7 @@
 	<div class="frm-cntnr width--85">
 		<h4 class="m-margin-b bold lh-15 align-c slideUp">$Fr4Title</h4>
 		<% loop InvestorCenterPage %>
-		<div class="hm4__contentCon width--85 ma-auto">
+		<div class="hm4__contentCon">
 			<% loop Children %>
 			<div class="hm4__listCon">
 				<h6 class="type-1 bold align-c s-margin-b">$Title</h6>
@@ -142,7 +142,7 @@
 	</div>
 </section>
 <section id="sustainability" class="hm-frame5">
-	<div class="frm-cntnr width--80 inlineBlock-parent">
+	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--45">
 			<h6 class="type-white slideUp">$Fr5FrameTitle</h6>
 			<h4 class="m-margin-b bold lh-15 type-white slideUp">$Fr5Title</h4>
@@ -170,7 +170,7 @@
 	<div class="hm5__bgGray"></div>
 </section>
 <section id="contactus" class="hm-frame6">
-	<div class="frm-cntnr width--80 inlineBlock-parent">
+	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--55">
 			<div class="hm6__contentList" style="background-image: url('$Fr6Img1.URL')">
 				<h6>$Fr6Title1</h6>

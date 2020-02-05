@@ -41,9 +41,7 @@ namespace {
 			'Name' => 'Name',
 			'Lat' => 'Lat',
 			'Lng' => 'Lng',
-			'Phone' => 'Phone',
 			'Address' => 'Address',
-			'SearchTags' => 'SearchTags'
 		);
 
 
