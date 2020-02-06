@@ -35,7 +35,7 @@
 							<li class="hdr__link"><a href="#ourbusiness" title="Our Business">Our Business</a></li>
 							<li class="hdr__link"><a href="#sustainability" title="Sustainability">Sustainability</a></li>
 							<li class="hdr__link"><a href="#investorcenter" title="Investor Center">Investor Center</a></li>
-							<li class="hdr__link"><a href="#careers" title="Careers<">Careers</a></li>
+							<li class="hdr__link"><a href="#modal" title="Careers<">Careers</a></li>
 							<li class="hdr__link"><a href="#contactus" title="Contact Us">Contact Us</a></li>
 						</ul>
 					</div>
