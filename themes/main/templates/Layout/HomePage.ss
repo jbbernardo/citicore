@@ -126,14 +126,14 @@
 				<h6 class="type-1 bold align-c s-margin-b">$Title</h6>
 				<div class="hm4__listInnerCon">
 					<% loop Children.Limit(1) %>
-					<a href="#"><div class="hm4__newsImgCon" style="background-image: url('$ArticleImage.URL')"></div></a>
+					<a href="#modal"><div class="hm4__newsImgCon" style="background-image: url('$ArticleImage.URL')"></div></a>
 					<% end_loop %>
 					<ul>
 						<% loop Children.Limit(3) %>
-						<li><p><a href="#">$ArticleTitle</a> <span>$ArticleYear</span></p></li>
+						<li><p><a href="#modal">$ArticleTitle</a> <span>$ArticleYear</span></p></li>
 						<% end_loop %>
 					</ul>
-					<p class="align-r type-red"><a href="#">See More >></a></p>
+					<p class="align-r type-red"><a href="#modal">See More >></a></p>
 				</div>
 			</div>
 			<% end_loop %>
@@ -221,3 +221,8 @@
         <% end_loop %>
     ];
 </script>
+
+<div class="remodal getHere-modal" data-remodal-id="modal">
+	<button data-remodal-action="close" class="remodal-close"></button>
+	<h2>Coming Soon</h2>
+</div>
