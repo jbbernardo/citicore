@@ -112,7 +112,7 @@
 		<div class="hm3__BGCon" style="background-image: url('$Fr3BG.URL')"></div>
 		<div class="hm3__bgOrange"></div>
 	</div>
-	<div class="hm3__bgGray"></div>
+	<%-- <div class="hm3__bgGray"></div> --%>
 </section>
 <%-- <section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
@@ -166,7 +166,7 @@
 		<div class="hm5__BGCon" style="background-image: url('$Fr5BG.URL')"></div>
 		<div class="hm5__bgYellow"></div>
 	</div>
-	<div class="hm5__bgGray"></div>
+	<%-- <div class="hm5__bgGray"></div> --%>
 </section>
 <section id="contactus" class="hm-frame6">
 	<div class="frm-cntnr width--85 inlineBlock-parent">
