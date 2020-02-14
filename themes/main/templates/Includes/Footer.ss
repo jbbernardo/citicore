@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<div class="ftr__bgBlue"></div>
-	<div class="ftr__bgGray"></div>
+	<%-- <div class="ftr__bgGray"></div> --%>
 </div>
 <% end_loop %>
 <% end_if %>
