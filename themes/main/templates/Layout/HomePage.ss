@@ -23,7 +23,7 @@
 	<div class="hm1__bgWhite"></div>
 	<div class="hm1__bgRed"></div>
 </section>
-<section id="aboutus" class="hm-frame2 frm-padding">
+<%-- <section id="aboutus" class="hm-frame2 frm-padding">
 	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--50">
 			<h6 class="type-1 slideUp">$Fr2FrameTitle</h6>
@@ -44,9 +44,7 @@
 			<div id="map" class="mapouter"></div>
 		</div>
 	</div>
-
-
-</section>
+</section> --%>
 <section id="ourbusiness" class="hm-frame3">
 	<div class="frm-cntnr width--85">
 		<div class="hm3__titleCon l-margin-b align-c">
@@ -116,7 +114,7 @@
 	</div>
 	<div class="hm3__bgGray"></div>
 </section>
-<section id="investorcenter" class="hm-frame4 frm-padding">
+<%-- <section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
 		<h4 class="m-margin-b bold lh-15 align-c slideUp">$Fr4Title</h4>
 		<% loop InvestorCenterPage %>
@@ -140,10 +138,11 @@
 		</div>
 		<% end_loop %>
 	</div>
-</section>
+</section> --%>
 <section id="sustainability" class="hm-frame5">
 	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--45">
+			<img src="$Fr5Img1.URL" alt="$Fr5Img1.Title">
 			<h6 class="type-white slideUp">$Fr5FrameTitle</h6>
 			<h4 class="m-margin-b bold lh-15 type-white slideUp">$Fr5Title</h4>
 			<p class="type-white slideUp">$Fr5Desc</p>
