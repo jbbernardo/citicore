@@ -71,7 +71,7 @@ namespace {
             $fields->removeByName('SortOrder');
 
             # SET FIELD DESCRIPTION 
-            $upload->setDescription('Max file size: 2MB | Dimension: At Least 600px x 380px');
+            $upload->setDescription('Max file size: 1MB | Dimension: At Least 600px x 380px');
             # Set destination path for the uploaded images.
             $upload->setFolderName('homepage/frame5');
 

@@ -24,9 +24,11 @@
 			margin: auto;
 			opacity: 0;
 			transition-delay: -1s;
+			pointer-events: none;
 
 			&.active {
 				opacity: 1;
+				pointer-events: auto;
 				transition-delay: 0.3s;
 			}
 
@@ -203,6 +205,7 @@
 				background-color: transparent;
 				padding: 0;
 				margin-top: 20px;
+				opacity: 1;
 
 				.hm3__arrow {
 					display: none;
@@ -310,7 +313,7 @@
 
 		.hm1__bgWhite {
 			height: 70px;
-			top: 65vh;
+			top: 250px;
 			bottom: unset;
 
 			&.active {
@@ -320,7 +323,7 @@
 
 		.hm1__bgRed {
 			height: 70px;
-			top: 62vh;
+			top: 230px;
 			bottom: unset;
 			transform: skew(0deg,-4deg);
 
@@ -384,6 +387,7 @@
 	}
 
 	.hm-frame6 {
+		padding-top: 100px;
 
 		.frm-cntnr {
 			width: 90%;
@@ -398,8 +402,9 @@
 
 		.width--45 {
 			display: block;
-			width: 100%;
+			width: 260px;
 			padding-left: 0;
+			margin: auto;
 		}
 	}
 
@@ -511,6 +516,10 @@
 		.hm1__bgRed {
 			top: 230px;
 		}
+	}
+
+	.hm-frame5 .width--45 img {
+		width: 100%;
 	}
 
 	.hm-frame6 .width--45 img {

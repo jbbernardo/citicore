@@ -32,12 +32,7 @@ var app = {
 			window.addEventListener("resize", headerMobile);
 			function headerMobile() {
 				var width = $(window).width();
-				if (width <= 1024) {
-					$('.ftr__topCon h6').click(function () {
-						$(this).siblings('ul').slideToggle(300);
-						$(this).toggleClass('active');
-					});
-				} else {
+				if (width <= 1024) {} else {
 					function changeHeader() {
 						var window_top = $(window).scrollTop();
 						var trigger__top = $('.frame1').offset().top + 100;
@@ -63,6 +58,26 @@ var app = {
 				$(this).parent().toggleClass('active');
 				$('.hdr__topCon').toggleClass('active');
 			});
+
+			$('.ftr__linkParent h6').on('click', function () {
+
+				if ($(this).parent().hasClass('active')) {
+
+					$(this).parent().removeClass('active');
+					$(this).siblings('ul').slideUp(300);
+					$(this).removeClass('active');
+				} else {
+
+					$(this).parent().addClass('active');
+					$(this).siblings('ul').slideDown(300);
+					$(this).addClass('active');
+				}
+			});
+
+			/*$('.ftr__linkParent h6').on('click', function(){
+   	console.log('test');
+   	
+   });*/
 		},
 
 		homepage: function () {
@@ -165,12 +180,12 @@ var app = {
 			$('.hm3__textInner .hm3__arrow').on('click', function () {
 				$(this).parent().parent().fadeOut(300);
 				setTimeout(function () {
-					$(this).parent().parent().siblings('.hm3__textPrev').fadeIn(300);
+					$(this).parent().parent().siblings('.hm3__textPrev').addClass('active');
 				}.bind(this), 300);
 			});
 
 			$('.hm3__textPrev .hm3__arrow').on('click', function () {
-				$(this).parent().fadeOut(300);
+				$(this).parent().removeClass('active');
 				setTimeout(function () {
 					$(this).parent().siblings('.hm3__textCon').fadeIn(300);
 				}.bind(this), 300);
@@ -189,6 +204,41 @@ var app = {
 
 			var hm6 = $('.hm-frame6 .width--45').height();
 			$('.hm-frame6 .width--55').height(hm6);
+
+			var controller = new ScrollMagic.Controller();
+
+			$('.hm3__contentCon').each(function () {
+				var tl = new TimelineMax({ repeat: 0, repeatDelay: 0.5 });
+				tl.staggerFrom(".hm3__contentCon .page__gridChild", 1, { opacity: 0 }, 0.3).staggerTo(".hm3__contentCon .page__gridChild", 1, { opacity: 1 }, 0.3);
+
+				var fadeScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: .7,
+					reverse: false
+				}).setTween(tl).addTo(controller);
+			});
+
+			$('.hm4__contentCon').each(function () {
+				var tl = new TimelineMax({ repeat: 0, repeatDelay: 0.5 });
+				tl.staggerFrom(".hm4__listCon", 1, { opacity: 0 }, 0.3).staggerTo(".hm4__listCon", 1, { opacity: 1 }, 0.3);
+
+				var fadeScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: .7,
+					reverse: false
+				}).setTween(tl).addTo(controller);
+			});
+
+			$('.hm-frame6 .width--55').each(function () {
+				var tl = new TimelineMax({ repeat: 0, repeatDelay: 0.5 });
+				tl.staggerFrom(".hm6__contentList", 1, { opacity: 0 }, 0.3).staggerTo(".hm6__contentList", 1, { opacity: 1 }, 0.3);
+
+				var fadeScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: .7,
+					reverse: false
+				}).setTween(tl).addTo(controller);
+			});
 		}
 
 	},

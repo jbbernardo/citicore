@@ -16,7 +16,7 @@
 					<div class="hdr__midContent">
 						<div>
 							<% loop $HeaderFooter %>
-							<a href="$AbsoluteBaseURL"><img src="$HeaderLogo.URL"></a>
+							<a href="$AbsoluteBaseURL"><img src="$HeaderLogo.URL" alt="$HeaderLogo.Title"></a>
 							<% end_loop %>
 						</div>
 						<div class="to-Mob">
@@ -31,11 +31,11 @@
 						</div>
 						<ul class="inlineBlock-parent">
 							<li class="hdr__link $FirstLast $LinkOrSection"><a href="#home" title="Home">Home</a></li>
-							<li class="hdr__link"><a href="#aboutus" title="About Us">About Us</a></li>
+							<%-- <li class="hdr__link"><a href="#aboutus" title="About Us">About Us</a></li> --%>
 							<li class="hdr__link"><a href="#ourbusiness" title="Our Business">Our Business</a></li>
 							<li class="hdr__link"><a href="#sustainability" title="Sustainability">Sustainability</a></li>
-							<li class="hdr__link"><a href="#investorcenter" title="Investor Center">Investor Center</a></li>
-							<li class="hdr__link"><a href="#careers" title="Careers<">Careers</a></li>
+							<%-- <li class="hdr__link"><a href="#investorcenter" title="Investor Center">Investor Center</a></li> --%>
+							<li class="hdr__link"><a href="#modal" title="Careers<">Careers</a></li>
 							<li class="hdr__link"><a href="#contactus" title="Contact Us">Contact Us</a></li>
 						</ul>
 					</div>

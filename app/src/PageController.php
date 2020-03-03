@@ -55,5 +55,10 @@ namespace {
         public function getInvestorCenterListPage() {
             return InvestorCenterListPage::get();
         }
+
+        public function getStore() {
+            return Store::get();
+        }
+
     }
 }
