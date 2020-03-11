@@ -112,7 +112,7 @@
 		<div class="hm3__BGCon" style="background-image: url('$Fr3BG.URL')"></div>
 		<div class="hm3__bgOrange"></div>
 	</div>
-	<%-- <div class="hm3__bgGray"></div> --%>
+	<div class="hm3__bgGray"></div>
 </section>
 <%-- <section id="investorcenter" class="hm-frame4 frm-padding">
 	<div class="frm-cntnr width--85">
@@ -143,10 +143,10 @@
 	<div class="frm-cntnr width--85 inlineBlock-parent">
 		<div class="width--45">
 			<img src="$Fr5Img1.URL" alt="$Fr5Img1.Title">
-			<h6 class="type-white slideUp">$Fr5FrameTitle</h6>
-			<h4 class="m-margin-b bold lh-15 type-white slideUp">$Fr5Title</h4>
-			<p class="type-white slideUp">$Fr5Desc</p>
-			<a href="$Fr5BtnLink" class="frm-inlineBlock"><button class="btn type-white m-margin-t slideUp">$Fr5BtnText</button></a>
+			<h6 class="slideUp">$Fr5FrameTitle</h6>
+			<h4 class="m-margin-b bold lh-15 slideUp">$Fr5Title</h4>
+			<p class="slideUp">$Fr5Desc</p>
+			<a href="$Fr5BtnLink" class="frm-inlineBlock"><button class="btn type-yellow m-margin-t slideUp">$Fr5BtnText</button></a>
 		</div
 		><div class="width--55 fadeIn">
 			<div class="hm5__sliderCon">
@@ -166,7 +166,7 @@
 		<div class="hm5__BGCon" style="background-image: url('$Fr5BG.URL')"></div>
 		<div class="hm5__bgYellow"></div>
 	</div>
-	<%-- <div class="hm5__bgGray"></div> --%>
+	<div class="hm5__bgGray"></div>
 </section>
 <section id="contactus" class="hm-frame6">
 	<div class="frm-cntnr width--85 inlineBlock-parent">
