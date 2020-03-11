@@ -235,7 +235,7 @@
 }
 
 
-.hm-frame2 {
+/*.hm-frame2 {
 
 	.mapouter {
 		width: 100%;
@@ -299,7 +299,7 @@
 			background-color: $color--red;
 		}
 	}
-}
+}*/
 
 .hm-frame3 {
 	position: relative;
@@ -390,9 +390,9 @@
 		}
 
 		.hm3__textCon {
-			position: relative;
+			position: absolute;
 			bottom: 0;
-			z-index: 3;
+			z-index: 4;
 			width: 100%;
 			box-sizing: border-box;
 			align-self: flex-end;
@@ -447,13 +447,12 @@
 			background-color: rgba(0,0,0,0.5);
 			flex-wrap: nowrap;
 			align-items: center;
-			display: none;
+			display: flex;
 			height: 100%;
 			opacity: 0;
-			transition: opacity 0.3s ease 0.6s;
+			@extend %trans-ease;
 
 			&.active {
-				display: flex;
 				opacity: 1;
 			}
 
@@ -476,7 +475,7 @@
 	}
 }
 
-.hm-frame4 {
+/*.hm-frame4 {
 
 	.hm4__contentCon {
 		display: flex;
@@ -559,7 +558,7 @@
 			}
 		}
 	}
-}
+}*/
 
 .hm-frame5 {
 	position: relative;
