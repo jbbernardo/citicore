@@ -22,6 +22,33 @@
 }
 
 /*
+* flex
+*/
+.display--flex {
+	display: flex;
+
+	&.flex--wrap {
+		flex-wrap: wrap;
+	}
+}
+
+/*
+* Justify
+*/
+.justify--between { justify-content: space-between; }
+.justify--around { justify-content: space-around; }
+
+/*
+* Align
+*/
+.align--items-center { align-items: center; }
+.align--items-start { align-items: flex-start; }
+.align--items-end { align-items: flex-end; }
+.align--self-center { align-self: center; }
+.align--self-start { align-self: flex-start; }
+.align--self-end { align-self: flex-end; }
+
+/*
 * Inline
 */
 .inlineBlock-parent > * {
@@ -86,6 +113,7 @@
 /*
 * Width
 */
+.width--auto { width: auto; }
 .width--10 { width: 10%; }
 .width--15 { width: 15%; }
 .width--20 { width: 20%; }

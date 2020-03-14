@@ -1,7 +1,7 @@
 <% if ClassName != 'Page' %>
 <% loop $HeaderFooter %>
 <div class="ftr-frame">
-	<div class="width--80 ma-auto">
+	<div class="width--80 ma-auto frm-cntnr">
 		<div class="ftr__topCon">
 			<div class="width--30">
 				<h6>$FtrTitle1</h6>
