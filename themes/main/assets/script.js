@@ -16,6 +16,9 @@ var app = {
 			case 'HomePage':
 				setup.homepage();
 				break;
+			case 'CompanyHistoryPage':
+				setup.companyhistorypage();
+				break;
 		}
 
 		setup.menu();
@@ -25,33 +28,17 @@ var app = {
 
 		menu: function () {
 
-			//Calls the function on load to switch layout
-			headerMobile();
+			$('.hdr__link').click(function () {
+				$(this).toggleClass('activeSub');
+				$(this).children(".hdr__subLinkCon").slideToggle(300);
+			});
 
-			//Calls the function on resize to switch layout
-			window.addEventListener("resize", headerMobile);
-			function headerMobile() {
-				var width = $(window).width();
-				if (width <= 1024) {} else {
-					function changeHeader() {
-						var window_top = $(window).scrollTop();
-						var trigger__top = $('.frame1').offset().top + 100;
-
-						if (window_top > trigger__top) {
-							$('.hdr-frame').addClass('changeHeader');
-							$('.hdr-frame .hdr__topCon').slideUp(300);
-						} else {
-							$('.hdr-frame').removeClass('changeHeader');
-							$('.hdr-frame .hdr__topCon').slideDown(300);
-						}
-					}
-
-					$(function () {
-						$(window).scroll(changeHeader);
-						changeHeader();
-					});
+			$(document).on('mouseup', function (e) {
+				if ($(e.target).closest(".hdr__link").length === 0) {
+					$('.hdr__link.activeSub').children(".hdr__subLinkCon").slideUp(300);
+					$('.hdr__link.activeSub').removeClass('activeSub');
 				}
-			};
+			});
 
 			$('#nav-icon').click(function () {
 				$(this).toggleClass('open');
@@ -74,13 +61,82 @@ var app = {
 				}
 			});
 
-			/*$('.ftr__linkParent h6').on('click', function(){
-   	console.log('test');
-   	
-   });*/
+			// 
+			// TABBING
+			// 
+
+			// Initialize tabbing
+			$(".gen__sideNav li:first").addClass('active');
+			var tab_target = $(".gen__sideNav li:first").data("tab-target");
+			$(".gen__tabCon *[data-tab-list='" + tab_target + "']").slideDown(300);
+
+			clickTab();
+
+			// Tabbing on click
+			function clickTab() {
+				$(".gen__sideNav li").click(function () {
+					var tab_target = $(this).data("tab-target");
+					if ($(this).hasClass("active")) {
+						selectTab(this);
+					} else {
+						// Resets tabs
+						$(".gen__sideNav li").removeClass("active");
+						setTimeout(function () {
+							$(".gen__tabList").slideUp(300);
+						}, 300);
+
+						selectTab(this);
+					}
+				});
+			}
+
+			// Select tab
+			function selectTab(e) {
+				$(e).addClass("active");
+				setTimeout(function () {
+					$(".gen__tabCon *[data-tab-list='" + tab_target + "']").slideDown(300);
+				}, 300);
+			}
+
+			$(".gen__tabCon select").on('change', function () {
+				var tab_target = $(this).find(':selected').data("tab-target");
+				setTimeout(function () {
+					$(".gen__tabList").slideUp(300);
+				}, 300);
+
+				setTimeout(function () {
+					$(".gen__tabCon *[data-tab-list='" + tab_target + "']").slideDown(300);
+				}, 300);
+			});
 		},
 
 		homepage: function () {
+
+			//Calls the function on load to switch layout
+			headerMobile();
+
+			//Calls the function on resize to switch layout
+			window.addEventListener("resize", headerMobile);
+			function headerMobile() {
+				var width = $(window).width();
+				if (width <= 1024) {} else {
+					function changeHeader() {
+						var window_top = $(window).scrollTop();
+						var trigger__top = $('.frame1').offset().top + 100;
+
+						if (window_top > trigger__top) {
+							$('.hdr-frame').addClass('changeHeader');
+						} else {
+							$('.hdr-frame').removeClass('changeHeader');
+						}
+					}
+
+					$(function () {
+						$(window).scroll(changeHeader);
+						changeHeader();
+					});
+				}
+			};
 
 			$('.hm1__sliderCon').slick({
 				dots: false,
@@ -238,6 +294,71 @@ var app = {
 					triggerHook: .7,
 					reverse: false
 				}).setTween(tl).addTo(controller);
+			});
+		},
+
+		companyhistorypage: function () {
+
+			/*//Calls the function on load to switch layout
+   tabbing();
+   	//Calls the function on resize to switch layout
+   window.addEventListener("resize", tabbing);
+   function tabbing(){
+   	var width = $(window).width(); 
+   	if (width <= 1024){
+   		$(".gen__sideNav li").click(function(){
+   				if ($('gen__sideNav').hasClass("active")){
+   				$('.gen__sideNav').removeClass('active');
+   				$('.gen__sideNav ul').css('height', '40px');
+   				console.log('test')
+   			} else {
+   				console.log('test2')
+   				var sum = 0;
+   					$('.gen__sideNav li').each(function() {
+   					sum += $(this).outerHeight(true);
+   				});
+   				$('.gen__sideNav ul').css('height', sum);
+   				$(".gen__sideNav").addClass("active");
+   						$(".gen__sideNav li").click(function(){
+   					var tab_target = $(this).data("tab-target");
+   					if ($(this).hasClass("active")){
+   						$(this).addClass("active");
+   						setTimeout(function(){
+   							$(".gen__tabList[data-tab-list='" + tab_target + "']").slideDown(300);
+   						}, 300);
+   						$('.gen__sideNav').removeClass('active');
+   						$('.gen__sideNav ul').css('height', '40px');
+   					} else {
+   						// Resets tabs
+   						$(".gen__sideNav li").removeClass("active");
+   						setTimeout(function(){
+   							$(".gen__tabList").slideUp(300);
+   						}, 300);
+   							$(this).addClass("active");
+   						setTimeout(function(){
+   							$(".gen__tabList[data-tab-list='" + tab_target + "']").slideDown(300);
+   						}, 300);
+   					}
+   						$('.gen__sideNav').removeClass('active');
+   						$('.gen__sideNav ul').css('height', '40px');
+   				});
+   			}
+   		});
+   			$(document).on('mouseup', function(e){
+   			if ($(e.target).closest(".gen__sideNav").length === 0) { 
+   				$('.gen__sideNav').removeClass('active');
+   				$('.gen__sideNav ul').css('height', '40px');
+   			}
+   		})
+   	} else {
+   		console.log('1025')
+   		clickTab();
+   	}
+   };*/
+
+			$('.abtCH1__menu').on('click', function () {
+				$(this).toggleClass('active');
+				$(this).next().slideToggle(300);
 			});
 		}
 

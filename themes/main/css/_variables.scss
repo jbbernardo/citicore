@@ -17,9 +17,11 @@ $color--primary2: #1D8DC6;		//Blue
 /* Secondary Colors */
 $color--yellow: #F9B02A;		//Yellow | Accent Color
 $color--red: #E42426;			//Red | Button Color
-$color--black: #5C5C5C;			//Paragraph Text, Frame Title
+$color--black: #2B2B2B;			//Paragraph Text, Frame Title
 $color--gray: #C4C4C4;			//Frame subtitle, inactive element
 $color--white: #ffffff;			//Button Text
+$color--darkGray: #ADADAD;
+$color--darkerGray: #949494;
 $color--lighterGray: #EEEEEE;
 $color--green: #1D934D;
 
@@ -42,8 +44,9 @@ $font-size-large: 1.938rem;			//31px | H3, Frame Subtitle
 $font-size-medium: 1.563rem;		//25px | H4, Banner Subtitle
 $font-size-small: 1.250rem;			//20px | H5
 $font-size-smaller: 1rem;			//16px | H6 | Small, Body Subtext, Button, Input
-
+$font-size-smaller2: 0.875rem;		//14px | Header
 $font-size-smallest: 0.813rem;		//13px | Small | Footer
+$font-size-smallest2: 0.750rem;		//12px
 
 
 /** 
