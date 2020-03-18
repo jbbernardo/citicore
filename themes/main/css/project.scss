@@ -1,0 +1,118 @@
+/*
+* prj : project
+*/
+.prj-frame1 {
+	position: relative;
+	padding: 70px 0 100px;
+
+	.gen__BGHolder {
+		height: 110%;
+		overflow: hidden;
+	}
+
+	.gen__BGCon {
+		top: unset;
+		bottom: -200px;
+		left: 100px;
+		height: 60%;
+	}
+
+	.prj1__imgCon {
+		width: 100%;
+		height: 0;
+		padding-top: 50%;
+		@extend %bg-center-cover-nr;
+	}
+
+	.prj1__textCon {
+		margin-top: 25px;
+		margin-bottom: 60px;
+	}
+
+	.prj1__detailsCon {
+		margin: 0 -35px;
+	}
+
+	.prj1__detailsListCon {
+		width: 23%;
+		margin-bottom: 20px;
+
+		.prj1__dtlsImgCon {
+			width: 25px;
+			height: 25px;
+			margin-right: 15px;
+			@extend %bg-center-contain-nr;
+		}
+
+		.prj1__dtlsTextCon {
+			width: calc(100% - 40px);
+
+			h6 {
+				text-transform: uppercase;
+				margin-bottom: 10px;
+			}
+
+			p {
+
+			}
+
+			a {
+				color: $color--black;
+				text-decoration: unset;
+				@extend %trans-ease;
+
+				&:hover {
+					color: $color--yellow;
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 1024px) {
+
+	.prj-frame1 {
+
+		.width--70 {
+			width: 100%;
+		}
+
+		.prj1__detailsListCon {
+			margin: 0;
+			min-width: 200px;
+			margin-bottom: 25px;
+		}
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	
+	.prj-frame1 {
+
+		.gen__projectTitle {
+			display: block;
+
+			h4 {
+				line-height: 20px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.prj1__textCon {
+			margin-bottom: 35px;
+		}
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	
+
+}
+
+@media screen and (max-width: 320px) {
+	
+}

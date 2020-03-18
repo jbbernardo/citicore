@@ -35,46 +35,35 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class AboutPage extends Page {
+	class BusinessPage extends Page {
 
 		private static $db = [
 		
 			/*Frame 1*/
 			'Fr1FrameTitle' => 'Text',
 			'Fr1FrameDesc' => 'Text',
-
-			/*Frame 2*/
-			'Fr2FrameTitle' => 'Text',
+			'Fr1BtnText' => 'Text',
+			'Fr1BtnLinkTo' => 'Text',
 
 		];
 
 		private static $has_one = [
-
 			'Fr1BG' => Image::class,
-			'Fr2BG' => Image::class,
-
 		];
 
 		private static $has_many = [
-			'VisionMissions' => VisionMission::class,
+			'FeatureLists' => FeatureList::class,
 		];
 
 		private static $owns = [
-
 			'Fr1BG',
-			'Fr2BG',
-
 		];
 
-		private static $allowed_children = array(
-			'BoardDirectorPage',
-			'CorporateGovernancePage',
-			'CompanyHistoryPage',
-		);
+		private static $allowed_children = "none";
 
 		private static $defaults = array(
-			'PageName' => 'About',
-			'MenuTitle' => 'About',
+			'PageName' => 'Business Page',
+			'MenuTitle' => 'Business Page',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -91,25 +80,16 @@ namespace {
 					TextField::create('Fr1FrameTitle', 'Title'),
 					TextareaField::create('Fr1FrameDesc', 'Description')
 				),
+				new Tab('Button',
+					TextField::create('Fr1BtnText', 'Button Label'),
+					TextField::create('Fr1BtnLinkTo', 'Button Link To')
+				),
 				new Tab('Image',
 					$uploadf1 = UploadField::create('Fr1BG','Background Image')
-				)
-			));
-
-			/*
-			|-----------------------------------------------
-			| @Frame 2
-			|----------------------------------------------- */
-			$fields->addFieldToTab('Root.Frame2', new TabSet('Frame2Sets',
-				new Tab('Text',
-					TextField::create('Fr2FrameTitle', 'Title')
-				),
-				new Tab('Image',
-					$uploadf2 = UploadField::create('Fr2BG','Background Image')
 				),
 				new Tab('List',
-					GridField::create('VisionMissions', 'Vision', 
-						$this->VisionMissions(), 
+					GridField::create('FeatureLists', 'Feature Lists', 
+						$this->FeatureLists(), 
 					GridFieldConfig_RecordEditor::create(10)
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 					)
@@ -117,26 +97,22 @@ namespace {
 			));
 
 
-
-
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
 
 			# SET FIELD DESCRIPTION 
 			$uploadf1->setDescription('Max file size: 1MB | Dimension: At Least 1300px x 600px');
-			$uploadf2->setDescription('Max file size: 1MB | Dimension: At Least 1300px x 700px');
 			
 			
 			# Set destination path for the uploaded images.
-			$uploadf1->setFolderName('about/');
-			$uploadf2->setFolderName('about/');
+			$uploadf1->setFolderName('business/titlePage');
 			
 
 			return $fields;
 		}
 	}
 
-	class AboutPageController extends PageController {
+	class BusinessPageController extends PageController {
 		
 	}
 }

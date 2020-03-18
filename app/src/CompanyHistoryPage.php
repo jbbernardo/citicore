@@ -39,21 +39,19 @@ namespace {
 
 		private static $db = [
 		
-			/*Frame 2*/
+			/*Frame 1*/
+			'Fr1FrameTitle' => 'Text',
 
 		];
 
 		private static $has_one = [
-
-
 		];
 
 		private static $has_many = [
+			'HistoryLists' => HistoryList::class,
 		];
 
 		private static $owns = [
-
-
 		];
 
 		private static $allowed_children = "none";
@@ -72,27 +70,26 @@ namespace {
 			|-----------------------------------------------
 			| @Frame 1
 			|----------------------------------------------- */
+			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
+				new Tab('Text',
+					TextField::create('Fr1FrameTitle', 'Title')
+				),
+				new Tab('List',
+					GridField::create('HistoryLists', 'Company History Articles', 
+						$this->HistoryLists(), 
+					GridFieldConfig_RecordEditor::create(10)
+					->addComponent(new GridFieldSortableRows('SortOrder'))
+					)
+				)
+			));
 			
-
-
-
 
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
 			
 
-			/**
-			* EMAIL RECEIPIENT : Text Field
-			* - Flexibility purpose; to change email with ease.
-			*/
-			/*$fields->addFieldsToTab('Root.Email Recipient', array(
-				$desc = new TextField('Test', 'Email Address'),
-			));*/
-
-			# SET FIELD DESCRIPTION 
-			
-			
-			# Set destination path for the uploaded images.
+			#Remove by tab
+			$fields->removeFieldFromTab('Root.Main', 'Content');
 			
 
 			return $fields;

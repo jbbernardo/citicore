@@ -36,6 +36,7 @@
             "themes/main/css",
             "themes/main/fonts",
             "themes/main/images",
+            "themes/main/icons",
             "themes/main/js",
             "themes/main/templates"
         ]
