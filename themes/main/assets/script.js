@@ -35,8 +35,14 @@ var app = {
 		menu: function () {
 
 			$('.hdr__link').click(function () {
-				$(this).toggleClass('activeSub');
-				$(this).children(".hdr__subLinkCon").slideToggle(300);
+
+				if ($(".hdr__link").hasClass('activeSub')) {
+					$('.hdr__link.activeSub').children(".hdr__subLinkCon").slideToggle(300);
+					$('.hdr__link.activeSub').toggleClass('activeSub');
+				} else {
+					$(this).toggleClass('activeSub');
+					$(this).children(".hdr__subLinkCon").slideToggle(300);
+				}
 			});
 
 			$(document).on('mouseup', function (e) {
