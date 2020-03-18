@@ -437,6 +437,28 @@ var app = {
 				autoplaySpeed: 5000
 			});
 
+			$('.cmmnty-frm4__sliderHolder').slick({
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 300,
+				autoplay: false,
+				autoplaySpeed: 5000
+			});
+
+			$('.cmmnty-frm5__sliderHolder').slick({
+				dots: true,
+				arrows: false,
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 300,
+				autoplay: false,
+				autoplaySpeed: 5000
+			});
+
 			$('.slick-prev').html('<i class="fas fa-chevron-left"></i>');
 			$('.slick-next').html('<i class="fas fa-arrow-right"></i>');
 
