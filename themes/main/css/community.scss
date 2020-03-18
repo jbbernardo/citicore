@@ -1,0 +1,55 @@
+// Communities page
+
+.cmmnty--frm1 {
+	position: relative;
+	
+	.width--60 {
+		height: 70vh;
+	}
+
+	.width--40 {
+		height: 70vh;
+
+		.cmmnty-frm1__image {
+			width: 60%;
+			height: 40vh;
+			border-radius: 50%;
+			background-color: red;
+			margin: auto;
+		}
+	}
+
+	.frm-bckgrnds {
+		background-color: blue;
+	}
+}
+
+.cmmnty--frm2 {
+	position: relative;
+
+	.width--55 {
+		margin: auto;
+	}
+}
+
+.cmmnty--frm3 {
+	position: relative;
+
+	.cmmnty-frm3__sliderHolder {
+		width: 100%;
+
+		.cmmnty-frm3__slider {
+			width: 100%;
+			height: 40vh;
+			background-color: red;
+		}
+
+		.slick-prev, .slick-next {
+
+			&:before {
+				color: $color--red;
+			}
+
+		}
+	}
+}

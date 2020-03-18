@@ -14,6 +14,8 @@ var app = {
 			case 'CompanyHistoryPage':
 				setup.companyhistorypage();
 				break;
+			case 'CommunitiesPage':
+				setup.communitiespage();
 		}
 
 		setup.menu();
@@ -382,6 +384,24 @@ var app = {
 			});
 
 		},
+
+		communitiespage: function() {
+
+			$('.cmmnty-frm3__sliderHolder').slick({
+				dots: false,
+				arrows: true,
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				speed: 300,
+				autoplay: false,
+				autoplaySpeed: 5000
+			});
+
+			$('.slick-prev').html('<i class="fas fa-chevron-left"></i>');
+			$('.slick-next').html('<i class="fas fa-arrow-right"></i>');
+
+		}
 
 	},
 
