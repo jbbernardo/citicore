@@ -37,7 +37,6 @@
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaLight/stylesheet.css">
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaLightItalic/stylesheet.css">
 
-        <link rel="stylesheet" href="$ThemeDir/assets/app.css">
         
         <!-- Ionicon -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
@@ -60,11 +59,11 @@
         <!-- SweetAlert -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
         
-        
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        <link rel="stylesheet" href="$ThemeDir/assets/app.css">
     </head>
     <body class="">
         <!--[if lt IE 8]>

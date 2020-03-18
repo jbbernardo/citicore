@@ -14,6 +14,27 @@
 		width: 15px;
 		height: 15px;
 		margin-right: 5px;
+		@extend %bg-center-cover-nr;
+	}
+
+	h5 {
+		margin: 10px 0;
+		line-height: 25px;
+	}
+
+	small {
+		display: none;
+		margin-top: 45px;
+		font-size: $font-size-default;
+	}
+
+	a {
+		color: $color--black;
+		@extend %trans-ease;
+
+		&:hover {
+			color: $color--yellow
+		}
 	}
 
 	.inlineBlock-parent {
@@ -21,6 +42,19 @@
 		p {
 			width: calc(100% - 30px);
 			margin: 10px 0;
+
+			span {
+
+				&::after {
+					display: inline-block;
+					content: "|";
+					margin: 0 7px 0 10px;
+				}
+
+				&:last-child::after {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -75,13 +109,64 @@
 
 @media screen and (max-width: 1024px) {
 
-	
+	.cnct-frame1 {
+
+		.width--70 {
+			width: 100%;
+		}
+	}
+
+	.cnct-frame2 {
+
+		.width--70 {
+			width: 90%;
+		}
+	}
 
 }
 
 @media screen and (max-width: 768px) {
+
+	.cnct-frame1 {
+		padding: 70px 0;
+
+		.gen__BGHolder {
+			height: 100%;
+		}
+
+		small {
+			display: block;
+		}
+	}
 	
-	
+	.cnct-frame2 {
+		z-index: -1;
+		padding: 70px 0 0;
+		margin-bottom: -50px;
+
+		.width--70 {
+			width: 100%;
+		}
+
+		.width--55, .width--45, .gen__subTitleCon {
+			display: block;
+			width: 90%;
+			margin: auto;
+		}
+
+		.width--45 {
+			padding-left: 0;
+			margin-top: 70px;
+		}
+
+		.cnct2__mapCon {
+			margin-top: 60px;
+		}
+
+		.gen__BGHolder {
+			transform: unset;
+		}
+	}
 
 }
 

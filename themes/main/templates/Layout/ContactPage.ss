@@ -1,33 +1,34 @@
 <% include HeaderSpace %>
 <section class="cnct-frame1">
 	<div class="gen__withBG frm-cntnr width--85">
-		<div class="width--50">
-			<h1 class="bold">Contact Us</h1>
-			<h5 class="bold">Want to know more? You may contact us through:</h5>
+		<div class="width--70">
+			<h1 class="bold">$Fr1FrameTitle</h1>
+			<h5 class="bold">$Fr1FrameDesc</h5>
+			<small class="bold">$Fr1FrameLabel</small>
 			<div class="inlineBlock-parent">
-				<div class="cnct1__img" style="background-image: url('$ThemeDir/images/about/redbg1.png')"></div>
-				<p><a href="#" target="_blank">45</a></p>
+				<div class="cnct1__img" style="background-image: url('$Fr1Img1.URL')"></div>
+				<p><a href="$Fr1FrameAddrTo" target="_blank">$Fr1FrameAddr</a></p>
 			</div>
 			<div class="inlineBlock-parent">
-				<div class="cnct1__img" style="background-image: url('$ThemeDir/images/about/redbg1.png')"></div>
-				<p><a href="tel: " target="_blank">45</a></p>
+				<div class="cnct1__img" style="background-image: url('$Fr1Img2.URL')"></div>
+				<p><% loop ContactLists %><span><a href="tel: $CLNumber" target="_blank">$CLNumber</a></span><% end_loop %></p>
 			</div>
 			<div class="inlineBlock-parent">
-				<div class="cnct1__img" style="background-image: url('$ThemeDir/images/about/redbg1.png')"></div>
-				<p><a href="mailto: " target="_blank">45</a></p>
+				<div class="cnct1__img" style="background-image: url('$Fr1Img3.URL')"></div>
+				<p><a href="mailto: $Fr1FrameEmail" target="_blank">$Fr1FrameEmail</a></p>
 			</div>
 		</div>
 	</div>
 	<div class="gen__BGHolder">
-		<div class="gen__BGCon" style="background-image: url('$ThemeDir/images/about/redbg1.png')"></div>
+		<div class="gen__BGCon" style="background-image: url('$Fr1BG.URL')"></div>
 		<div class="gen__grdtWhite"></div>
 	</div>
 </section>
 <section class="cnct-frame2">
 	<div class="gen__withBG frm-cntnr width--70">
 		<div class="gen__subTitleCon">
-			<small>Contact Us</small>
-			<h4 class="bold">Reach us Today</h4>
+			<small>$Fr2FrameTitle</small>
+			<h4 class="bold">$Fr2FrameSubTitle</h4>
 		</div>
 		<div class="inlineBlock-parent">
 			<div class="width--55 cnct2__formCon align-t">

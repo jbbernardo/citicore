@@ -86,10 +86,7 @@ namespace {
 			'Fr3BG',
 		];
 
-		private static $allowed_children = array(
-			'PageHolder',
-			'BusinessPage',
-		);
+		private static $allowed_children = "none";
 
 		private static $defaults = array(
 			'PageName' => 'Retail Electricity Supply',
