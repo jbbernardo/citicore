@@ -59,6 +59,7 @@ namespace {
 		private static $allowed_children = array(
 			'ProjectPage',
 			'BusinessPage',
+			'RetailElectricitySupplyPage'
 		);
 
 		private static $defaults = array(

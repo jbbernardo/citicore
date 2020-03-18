@@ -823,17 +823,17 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 	display: grid;
 
 	&.grid-2 {
-		grid-template-columns: repeat(2, 1fr); 
-		grid-template-rows: repeat(1, 1fr); 
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1, 1fr);
 		grid-column-gap: 10px;
-		grid-row-gap: 10px; 
+		grid-row-gap: 10px;
 	}
 
 	&.grid-3 {
-		grid-template-columns: repeat(3, 1fr); 
-		grid-template-rows: repeat(1, 1fr); 
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(1, 1fr);
 		grid-column-gap: 10px;
-		grid-row-gap: 10px; 
+		grid-row-gap: 10px;
 	}
 
 	.page__gridChild {
@@ -1170,6 +1170,8 @@ label.error {
 	}
 
 	p {
+		font-size: $font-size-smallest;
+
 		&::before {
 			content: '>';
 			display: inline-block;
