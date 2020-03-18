@@ -43,7 +43,7 @@
 							</div>
 						</div>
 						<ul class="inlineBlock-parent">
-							<li class="hdr__link $FirstLast $LinkOrSection"><a href="/" title="Home">Home</a></li>
+							<li class="hdr__link $FirstLast $LinkOrSection"><a href="$AbsoluteBaseURL" title="Home">Home</a></li>
 							<li class="hdr__link"><a title="About Us">About Us</a>
 								<ul class="hdr__subLinkCon">
 									<li class="hdr__subLink"><a href="about-us">About Us</a></li>
@@ -62,7 +62,7 @@
 							<li class="hdr__link"><a href="#sustainability" title="Sustainability">Sustainability</a></li>
 							<li class="hdr__link"><a href="#modal" title="Investor Center">Investor Center</a></li>
 							<li class="hdr__link"><a href="#modal" title="Careers<">Careers</a></li>
-							<li class="hdr__link"><a href="#contactus" title="Contact Us">Contact Us</a></li>
+							<li class="hdr__link"><a href="contact-us" title="Contact Us">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>

@@ -14,6 +14,9 @@ var app = {
 			case 'CompanyHistoryPage':
 				setup.companyhistorypage();
 				break;
+			case 'ContactPage':
+				setup.contactpage();
+				break;
 		}
 
 		setup.menu();
@@ -419,6 +422,12 @@ var app = {
 				$(this).toggleClass('active');
 				$(this).next().slideToggle(300);
 			});
+
+		},
+
+		contactpage: function() {
+
+			app.form.init($('#contactForm'), $('#contactBtn'), 'form/contact/send', false);
 
 		},
 

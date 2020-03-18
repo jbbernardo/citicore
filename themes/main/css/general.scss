@@ -969,13 +969,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 .frm-form__holder {
 	.frm-form__row {
 		position: relative;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 
 		label {
 			display: block;
 			font-family: $font--1;
 			font-size: $font-size-smallest;
-			color: $color--primary1;
+			color: #5C5C5C;
 			text-transform: uppercase;
 		}
 
@@ -993,19 +993,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 			height: 40px;
 			font-size: 16px;
 			font-family: $font--1;
-			color: #000;
+			color: $color--black;
 			padding: 10px 12px;
 			box-sizing: border-box;
-			background: rgba(0,0,0,0.08);
+			background-color: $color--white;
 			border: none;
-			border: 1px solid rgba(0,0,0,0.08);
+			border: 1px solid $color--lighterGray;
 			@extend %trans-ease;
 
 			&::placeholder { font-size: 13px; }
 			&:focus,
 			&:active,
 			&:visited {
-				border: 1px solid $color--primary1;
+				border: 1px solid $color--lighterGray;
 			}
 
 			&.textarea { height: 120px; }

@@ -55,12 +55,16 @@ namespace {
 
 			'FtrCopyright' => 'Text',
 
+			'latitude' => 'Text',
+			'longitude' => 'Text',
+
 		];
 
 		private static $has_one = [
 
 			'HeaderLogo' => Image::class,
 			'Favicon' => Image::class,
+			'mappin' => Image::class,
 
 		];
 
@@ -70,7 +74,8 @@ namespace {
 
 		private static $owns = [
 	        'HeaderLogo',
-	        'Favicon'
+	        'Favicon',
+	        'mappin',
 	    ];
 
 		private static $defaults = array(
@@ -124,6 +129,18 @@ namespace {
 				),
 				new Tab('Copyright',
 					TextField::create('FtrCopyright', 'Copyright Text')
+				)
+			));
+
+			/*
+			|-----------------------------------------------
+			| @Map
+			|----------------------------------------------- */
+			$fields->addFieldToTab('Root.Map', new TabSet('MapSets',
+				new Tab('Map',
+					TextField::create('latitude', 'Latitude'),
+					TextField::create('longitude', 'Longitude'),
+					UploadField::create('mappin','Map Pin')
 				)
 			));
 

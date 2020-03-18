@@ -168,11 +168,40 @@
         <!-- HoverIntent -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.8.1/jquery.hoverIntent.min.js"></script>
         
-        <% if ClassName = 'ContactUs' %>
+        <% if ClassName = 'ContactPage' %>
         <!-- Storelocator -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKese9Nxt27v9smmicyvJ037PwXfGbe3E"></script>
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKese9Nxt27v9smmicyvJ037PwXfGbe3E"></script>
         <script type="text/javascript" src="$ThemeDir/js/vendor/chosen/chosen.jquery.min.js"></script>
-        <script type="text/javascript" src="$ThemeDir/js/storelocator.js"></script>
+        <script type="text/javascript" src="$ThemeDir/js/storelocator.js"></script> -->
+
+        <!-- GoogleMap -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdZmifNZogZcfRQ-wZy0B7yVVTd0cvPm4"></script>
+
+        <script type="text/javascript">
+            <% loop HeaderFooter %>
+            var mapLat = $latitude,
+                mapLng = $longitude
+            <% end_loop %>
+
+            var mapOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(mapLat, mapLng),
+                styles: []
+            };
+
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(mapLat, mapLng),
+                map: map,
+                title: 'Citicore',
+                <% loop HeaderFooter %>
+                    icon: '$mappin.URL',
+                <% end_loop %>
+                animation: google.maps.Animation.DROP,
+            });
+        </script>
+
         <% end_if %>
         
         <!-- Light Gallery -->
