@@ -2,6 +2,10 @@
 <% include SubNav %>
 <section class="abtCG-frame1">
 	<div class="gen__withBG frm-cntnr width--85">
+		<div class="gen__breadcrumbs inlineBlock-parent">
+			<a href="#"><p>About Us</p></a>
+			<p class="active">Corporate Governance</p>
+		</div>
 		<div class="gen__subTitleCon">
 			<h4 class="bold">Corporate Governance</h4>
 		</div>

@@ -2,6 +2,10 @@
 <% include SubNav %>
 <section class="abtBD-frame1">
 	<div class="gen__withBG frm-cntnr width--85">
+		<div class="gen__breadcrumbs inlineBlock-parent">
+			<a href="#"><p>$Parent.Title</p></a>
+			<p class="active invert">$Title</p>
+		</div>
 		<div class="gen__subTitleCon">
 			<h4 class="bold clr--white">Board of Directors</h4>
 		</div>

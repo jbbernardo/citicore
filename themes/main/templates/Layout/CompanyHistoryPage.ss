@@ -2,6 +2,10 @@
 <% include SubNav %>
 <section class="abtCH-frame1">
 	<div class="frm-cntnr width--85">
+		<div class="gen__breadcrumbs inlineBlock-parent">
+			<a href="#"><p>About Us</p></a>
+			<p class="active">Company History Page</p>
+		</div>
 		<div class="gen__subTitleCon">
 			<h4 class="bold">Company History</h4>
 		</div>

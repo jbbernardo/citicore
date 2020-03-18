@@ -1148,6 +1148,44 @@ label.error {
 	margin-bottom: 40px;
 }
 
+.gen__breadcrumbs {
+	display: none;
+	margin-bottom: 30px;
+	
+	a {
+		font-size: $font-size-smallest;
+		color: $color--darkerGray;
+
+		&:first-child p::before {
+			display: none;
+		}
+
+		&:hover {
+			color: $color--primary1;
+
+			p::before {
+				color: $color--darkerGray;
+			}
+		}
+	}
+
+	p {
+		&::before {
+			content: '>';
+			display: inline-block;
+			margin: 0 8px 0 5px;
+		}
+
+		&.active {
+			color: $color--black;
+
+			&.invert {
+				color: $color--white;
+			}
+		}
+	}
+}
+
 .gen__withBG {
 	position: relative;
 	z-index: 10;
@@ -1223,6 +1261,35 @@ label.error {
 		@extend %appearance;
 	}
 
+	&.gen__project {
+		position: relative;
+		padding: 0;
+		background-color: transparent;
+		box-shadow: unset;
+
+		&::after {
+			display: none;
+		}
+
+		select {
+			display: block;
+			width: 100%;
+			height: 40px;
+			background-color: $color--white;
+			border: 1px solid $color--gray;
+			box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+		}
+
+		i {
+			position: absolute;
+			top: 13px;
+			right: 10px;
+			z-index: 2;
+			font-size: $font-size-default;
+			color: $color--darkBlue;
+		}
+	}
+
 	ul {
 
 	}
@@ -1278,6 +1345,11 @@ label.error {
 	padding-top: 20px;
 	padding-left: 50px;
 	box-sizing: border-box;
+
+	&.gen__project {
+		padding-top: 0;
+		padding-left: 0;
+	}
 
 	.gen__tabList {
 		display: none;
