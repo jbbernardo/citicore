@@ -66,6 +66,7 @@ var app = {
 			// Initialize tabbing
 			$(".gen__sideNav li:first").addClass('active')
 			var tab_target = $(".gen__sideNav li:first").data("tab-target");
+			var tab_target = $(".gen__tabCon select").find(':selected').data("tab-target");
 			$(".gen__tabCon *[data-tab-list='" + tab_target + "']").slideDown(300);
 
 			clickTab();
@@ -83,13 +84,13 @@ var app = {
 							$(".gen__tabList").slideUp(300);
 						}, 300);
 
-						selectTab(this);
+						selectTab(this, tab_target);
 					}
 				});
 			}
 
 			// Select tab
-			function selectTab(e) {
+			function selectTab(e, tab_target) {
 				$(e).addClass("active");
 				setTimeout(function(){
 					$(".gen__tabCon *[data-tab-list='" + tab_target + "']").slideDown(300);
@@ -105,6 +106,41 @@ var app = {
 				setTimeout(function(){
 					$(".gen__tabCon *[data-tab-list='" + tab_target + "']").slideDown(300);
 				}, 300);
+			});
+
+
+			// GENERIC BUSINESS PAGE
+			$('.bsnss1__sliderCon').slick({
+				dots: true,
+				arrows: false,
+				infinite: true,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				speed: 300,
+				autoplay: false,
+				responsive: [
+					{
+						breakpoint: 1025,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 3,
+						}
+					},
+					{
+						breakpoint: 769,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+						}
+					},
+					{
+						breakpoint: 481,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+						}
+					}
+				]
 			});
 		},
 
@@ -377,6 +413,9 @@ var app = {
 					clickTab();
 				}
 			};*/
+
+			$('.abtCH1__menu:first').addClass("active")
+			$('.abtCH1__menu:first').next().slideToggle(300);
 
 			$('.abtCH1__menu').on('click', function() {
 				$(this).toggleClass('active');

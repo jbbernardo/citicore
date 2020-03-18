@@ -1,0 +1,358 @@
+/*
+* bsnss : business
+*/
+.bsnss-frame1 {
+	position: relative;
+	padding: 70px 0;
+
+	.gen__BGHolder {
+		height: 120%;
+	}
+
+	h1 {
+		line-height: 48px;
+		margin-bottom: 30px;
+	}
+
+	.bsnss1__sliderCon {
+		opacity: 0;
+		@extend %trans-ease;
+
+		&.slick-initialized.slick-slider {
+			opacity: 1;
+		}
+
+		.slick-list {
+			padding: 10px 0;
+			margin: 0 -10px;
+		}
+
+		.slick-dots {
+			bottom: -40px;
+			width: calc(100% - 30px);
+			margin: 0 15px;
+
+			li {
+				width: auto;
+				height: auto;
+				background-color: $color--gray;
+
+				&.slick-active {
+					background-color: $color--red;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:only-child {
+					display: none;
+				}
+
+				button {
+					width: 40px;
+					height: 5px;
+					padding: 0;
+					border-radius: 3px;
+
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.bsnss1__sliderListCon {
+		height: 170px;
+		padding: 20px 15px;
+		margin: 0 10px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.15);
+		background-color: $color--lightestGray;
+
+		.bsnss1__title {
+			margin-bottom: 5px;
+			font-size: 48px;
+			line-height: 48px;
+		}
+
+		.bsnss1__img {
+			width: 60px;
+			height: 50px;
+			margin: 0 auto 5px;
+			@extend %bg-center-contain-nr;
+		}
+
+		h5 {
+			max-height: 40px;
+			display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+		}
+
+		.bsnss1__desc {
+			max-height: 62px;
+			margin-top: 5px;
+			display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+		}
+	}
+}
+
+
+
+/*
+* res : Retail Electricity Supply
+*/
+.res-frame1 {
+	position: relative;
+	padding: 70px 0 120px;
+
+	.res1__textCon {
+
+	}
+
+	.res1__imgCon {
+
+		.res1__img {
+			width: 300px;
+			height: 150px;
+			margin: auto;
+			@extend %bg-center-contain-nr;
+		}
+	}
+
+	.gen__BGHolder {
+		height: 120%;
+	}
+
+	.gen__grdtWhite {
+		background: $color--red;
+		opacity: 0.05;
+	}
+}
+
+.res-frame2 {
+	position: relative;
+	padding: 70px 0;
+
+	.res2__sliderListCon {
+		width: 30%;
+		max-width: 320px;
+		height: 200px;
+		padding: 30px 40px;
+		background-color: $color--lightestGray;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+		box-sizing: border-box;
+
+		h4 {
+
+			span {
+				font-size: $font-size-small;
+			}
+		}
+	}
+
+	.gen__BGHolder {
+		height: 100%;
+		transform: skew(0deg,-2deg);
+		overflow: hidden;
+
+		.gen__BGCon {
+			top: -50px;
+			height: 120%;
+			transform: skew(0deg,2deg);
+		}
+	}
+}
+
+.res-frame3 {
+	position: relative;
+	padding: 70px 0 120px;
+
+	.gen__subTitleCon {
+
+		small {
+			display: block;
+			color: #1D8DC6;
+		}
+	}
+
+	.res3__partnersCon {
+		grid-column-gap: 35px;
+		grid-row-gap: 35px; 
+
+		.page__gridChild {
+			height: 100%;
+
+			.res3__img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.res3__textCon {
+				position: relative;
+				z-index: 1;
+				width: 100%;
+				height: 60vh;
+				max-height: 300px;
+				padding: 20px;
+				background-color: rgba(0,0,0,0.5);
+				box-sizing: border-box;
+				@extend %trans-ease;
+
+				h4 {
+					line-height: 30px;
+				}
+
+				p {
+					line-height: 20px;
+				}
+			}
+		}
+	}
+
+	.gen__BGHolder {
+		height: 110%;
+		overflow: hidden;
+	}
+
+	.gen__BGCon {
+		top: unset;
+		bottom: -100px;
+		left: 100px;
+		height: 60%;
+	}
+
+	.gen__grdtWhite {
+		background: $color--red;
+		opacity: 0.05;
+	}
+}
+
+
+@media screen and (max-width: 1024px) {
+
+	.bsnss-frame1 {
+
+		.width--70 {
+			width: 100%;
+
+			button {
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.res-frame2 {
+
+		.width--70 {
+			width: 90%;
+		}
+	}
+
+	.res-frame3 {
+
+		.width--70 {
+			width: 90%;
+		}
+
+		.width--85 {
+			width: 100%;
+		}
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	
+	.res-frame1 {
+		padding: 70px 0;
+
+		.width--50 {
+			width: 100%;
+		}
+
+		.res1__textCon {
+			margin-bottom: 45px;
+		}
+	}
+
+	.res-frame2 .res2__sliderListCon {
+		width: 100%;
+		max-width: unset;
+		margin-bottom: 25px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.res-frame3 {
+		padding: 70px 0;
+	}
+
+	.res-frame3 .res3__partnersCon {
+		grid-template-columns: repeat(1,1fr);
+
+		.page__gridChild {
+
+			.res3__img {
+				position: unset;
+				height: 0;
+				padding-top: 80%;
+			}
+
+			.res3__textCon {
+				display: block;
+				height: auto;
+				max-height: unset;
+				padding: 0;
+				margin-top: 30px;
+				background-color: transparent;
+				color: $color--black;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.bsnss-frame1 {
+
+		.bsnss1__sliderCon .slick-list {
+			margin: 0;
+		}
+
+		.bsnss1__sliderCon .slick-dots {
+			bottom: unset;
+		}
+
+		.bsnss1__sliderListCon {
+			margin: 0 30px;
+		}
+
+	}
+
+	.res-frame1 .res1__imgCon .res1__img {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 320px) {
+	
+}

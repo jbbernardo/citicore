@@ -3,8 +3,8 @@
 namespace {
 	use SilverStripe\CMS\Model\SiteTree;
 
-	// use Page;  
-	// use PageController;
+	use Page;  
+	use PageController;
 
 	use SilverStripe\Forms\TabSet;
 	use SilverStripe\Forms\Tab;
@@ -35,30 +35,35 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class CompanyHistoryPage extends Page {
+	class OurBusinessPage extends Page {
 
 		private static $db = [
 		
-			/*Frame 1*/
-			'Fr1FrameTitle' => 'Text',
+			/*Frame 2*/
 
 		];
 
 		private static $has_one = [
+
+
 		];
 
 		private static $has_many = [
-			'HistoryLists' => HistoryList::class,
 		];
 
 		private static $owns = [
+
+
 		];
 
-		private static $allowed_children = "none";
+		private static $allowed_children = array(
+			'PageHolder',
+			'BusinessPage',
+		);
 
 		private static $defaults = array(
-			'PageName' => 'Company History',
-			'MenuTitle' => 'Company History',
+			'PageName' => 'Our Business',
+			'MenuTitle' => 'Our Business',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -70,33 +75,46 @@ namespace {
 			|-----------------------------------------------
 			| @Frame 1
 			|----------------------------------------------- */
-			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
-				new Tab('Text',
-					TextField::create('Fr1FrameTitle', 'Title')
-				),
-				new Tab('List',
-					GridField::create('HistoryLists', 'Company History Articles', 
-						$this->HistoryLists(), 
-					GridFieldConfig_RecordEditor::create(10)
-					->addComponent(new GridFieldSortableRows('SortOrder'))
-					)
-				)
-			));
 			
+
+
+
 
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
 			
 
-			#Remove by tab
-			$fields->removeFieldFromTab('Root.Main', 'Content');
+			/**
+			* EMAIL RECEIPIENT : Text Field
+			* - Flexibility purpose; to change email with ease.
+			*/
+			/*$fields->addFieldsToTab('Root.Email Recipient', array(
+				$desc = new TextField('Test', 'Email Address'),
+			));*/
+
+			# SET FIELD DESCRIPTION 
+			
+			
+			# Set destination path for the uploaded images.
 			
 
 			return $fields;
 		}
 	}
 
-	class CompanyHistoryPageController extends PageController {
+	class OurBusinessPageController extends PageController {
 		
+		public function init() {
+			parent::init();
+
+			/*REDIRECT TO CHILDREN*/
+
+			if (empty($this->Content)) {
+				if($this->Children()->Count()){
+					return $this->redirect($this->Children()->First()->AbsoluteLink());
+				}
+			}
+			
+		}
 	}
 }

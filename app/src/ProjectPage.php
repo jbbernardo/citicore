@@ -3,8 +3,8 @@
 namespace {
 	use SilverStripe\CMS\Model\SiteTree;
 
-	// use Page;  
-	// use PageController;
+	use Page;  
+	use PageController;
 
 	use SilverStripe\Forms\TabSet;
 	use SilverStripe\Forms\Tab;
@@ -35,7 +35,7 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class CompanyHistoryPage extends Page {
+	class ProjectPage extends Page {
 
 		private static $db = [
 		
@@ -45,20 +45,22 @@ namespace {
 		];
 
 		private static $has_one = [
+			'Fr1BG' => Image::class,
 		];
 
 		private static $has_many = [
-			'HistoryLists' => HistoryList::class,
+			'ProjectLists' => ProjectList::class,
 		];
 
 		private static $owns = [
+			'Fr1BG',
 		];
 
 		private static $allowed_children = "none";
 
 		private static $defaults = array(
-			'PageName' => 'Company History',
-			'MenuTitle' => 'Company History',
+			'PageName' => 'Project Page',
+			'MenuTitle' => 'Project Page',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -74,29 +76,34 @@ namespace {
 				new Tab('Text',
 					TextField::create('Fr1FrameTitle', 'Title')
 				),
+				new Tab('Image',
+					$uploadf1 = UploadField::create('Fr1BG','Background Image')
+				),
 				new Tab('List',
-					GridField::create('HistoryLists', 'Company History Articles', 
-						$this->HistoryLists(), 
+					GridField::create('ProjectLists', 'Project Lists', 
+						$this->ProjectLists(), 
 					GridFieldConfig_RecordEditor::create(10)
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 					)
 				)
 			));
-			
 
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
-			
 
-			#Remove by tab
-			$fields->removeFieldFromTab('Root.Main', 'Content');
+			# SET FIELD DESCRIPTION 
+			$uploadf1->setDescription('Max file size: 1MB | Dimension: At Least 1300px x 600px');
+			
+			
+			# Set destination path for the uploaded images.
+			$uploadf1->setFolderName('projectPage');
 			
 
 			return $fields;
 		}
 	}
 
-	class CompanyHistoryPageController extends PageController {
+	class ProjectPageController extends PageController {
 		
 	}
 }
