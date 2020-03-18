@@ -35,7 +35,7 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class InvestorCenterCategoryPage extends Page {
+	class CommunitiesPage extends Page {
 
 		private static $db = [
 		
@@ -59,13 +59,11 @@ namespace {
 
 		];
 
-		private static $allowed_children = array(
-			'InvestorCenterListPage',
-		);
+		private static $allowed_children = "none";
 
 		private static $defaults = array(
-			'PageName' => 'Investor Center Category Page',
-			'MenuTitle' => 'Investor Center Category',
+			'PageName' => 'Communities Page',
+			'MenuTitle' => 'Communities Center',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -97,7 +95,11 @@ namespace {
 		}
 	}
 
-	class InvestorCenterCategoryPageController extends PageController {
+	class CommunitiesPageController extends PageController {
 		
+		public function init() {
+			parent::init();
+			
+		}
 	}
 }

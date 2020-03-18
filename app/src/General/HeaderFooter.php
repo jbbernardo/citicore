@@ -3,8 +3,8 @@
 namespace {
 	use SilverStripe\CMS\Model\SiteTree;
 
-	use Page;  
-	use PageController;
+	// use Page;  
+	// use PageController;
 
 	use SilverStripe\Forms\TabSet;
 	use SilverStripe\Forms\Tab;

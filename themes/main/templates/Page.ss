@@ -36,6 +36,8 @@
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaBoldItalic/stylesheet.css">
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaLight/stylesheet.css">
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaLightItalic/stylesheet.css">
+
+        <link rel="stylesheet" href="$ThemeDir/assets/app.css">
         
         <!-- Ionicon -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
