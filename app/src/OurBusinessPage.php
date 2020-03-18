@@ -58,6 +58,7 @@ namespace {
 
 		private static $allowed_children = array(
 			'PageHolder',
+			'BusinessPage',
 		);
 
 		private static $defaults = array(

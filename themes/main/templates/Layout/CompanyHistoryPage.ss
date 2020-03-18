@@ -3,34 +3,24 @@
 <section class="abtCH-frame1">
 	<div class="frm-cntnr width--85">
 		<div class="gen__breadcrumbs inlineBlock-parent">
-			<a href="#"><p>About Us</p></a>
-			<p class="active">Company History Page</p>
+			<a href="#"><p>$Parent.Title</p></a>
+			<p class="active">$Title</p>
 		</div>
 		<div class="gen__subTitleCon">
-			<h4 class="bold">Company History</h4>
+			<h4 class="bold">$Fr1FrameTitle</h4>
 		</div>
 		<div class="abtCH1__tabCon">
+			<% loop HistoryLists %>
 			<div class="rows m-padding-tb abtCH1__listCon">
 				<div class="abtCH1__menu rows inlineBlock-parent">
-					<h4 class="clr--red bold">2019</h4>
+					<h4 class="clr--red bold">$HLTitle</h4>
 					<i class="fas fa-caret-down"></i>
 				</div>
 				<div class="abtCH1__content m-padding-t">
-					<p><strong>July 2019</strong></p>
-					<p>Test here</p>
-					<img src="https://cesi-drafts.praxxys.ph/assets/homepage/frame1/488f527234/FTSEC-Drone-shot-15_-1.png">
-					<a href="#">test</a>
+					$HLDesc
 				</div>
 			</div>
-			<div class="rows m-padding-tb abtCH1__listCon">
-				<div class="abtCH1__menu rows inlineBlock-parent">
-					<h4 class="clr--red bold">2019</h4>
-					<i class="fas fa-caret-down"></i>
-				</div>
-				<div class="abtCH1__content m-padding-t">
-					<p><strong>July 2019</strong></p>
-				</div>
-			</div>
+			<% end_loop %>
 		</div>
 	</div>
 </section>

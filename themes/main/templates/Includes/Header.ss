@@ -43,16 +43,22 @@
 							</div>
 						</div>
 						<ul class="inlineBlock-parent">
-							<li class="hdr__link $FirstLast $LinkOrSection"><a href="#home" title="Home">Home</a></li>
+							<li class="hdr__link $FirstLast $LinkOrSection"><a href="/" title="Home">Home</a></li>
 							<li class="hdr__link"><a title="About Us">About Us</a>
 								<ul class="hdr__subLinkCon">
-									<li class="hdr__subLink"><a href="#">About Us</a></li>
-									<li class="hdr__subLink"><a href="#">Board of Directors</a></li>
-									<li class="hdr__subLink"><a href="#">Corporate Governance</a></li>
-									<li class="hdr__subLink"><a href="#">Company History</a></li>
+									<li class="hdr__subLink"><a href="about-us">About Us</a></li>
+									<li class="hdr__subLink"><a href="about-us/board-director">Board of Directors</a></li>
+									<li class="hdr__subLink"><a href="about-us/corporate-governance">Corporate Governance</a></li>
+									<li class="hdr__subLink"><a href="about-us/company-history">Company History</a></li>
 								</ul>
 							</li>
-							<li class="hdr__link"><a href="#ourbusiness" title="Our Business">Our Business</a></li>
+							<li class="hdr__link"><a title="Our Business">Our Business</a>
+								<ul class="hdr__subLinkCon">
+									<li class="hdr__subLink"><a href="our-business/renewable-energy">Renewable Energy</a></li>
+									<li class="hdr__subLink"><a href="our-business/biomass">Biomass</a></li>
+									<li class="hdr__subLink"><a href="our-business/water-supply">Water Supply</a></li>
+								</ul>
+							</li>
 							<li class="hdr__link"><a href="#sustainability" title="Sustainability">Sustainability</a></li>
 							<li class="hdr__link"><a href="#modal" title="Investor Center">Investor Center</a></li>
 							<li class="hdr__link"><a href="#modal" title="Careers<">Careers</a></li>

@@ -412,6 +412,9 @@ var app = {
 				}
 			};*/
 
+			$('.abtCH1__menu:first').addClass("active")
+			$('.abtCH1__menu:first').next().slideToggle(300);
+
 			$('.abtCH1__menu').on('click', function() {
 				$(this).toggleClass('active');
 				$(this).next().slideToggle(300);

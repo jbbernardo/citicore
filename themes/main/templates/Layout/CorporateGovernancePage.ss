@@ -3,48 +3,41 @@
 <section class="abtCG-frame1">
 	<div class="gen__withBG frm-cntnr width--85">
 		<div class="gen__breadcrumbs inlineBlock-parent">
-			<a href="#"><p>About Us</p></a>
-			<p class="active">Corporate Governance</p>
+			<a href="#"><p>$Parent.Title</p></a>
+			<p class="active">$Title</p>
 		</div>
 		<div class="gen__subTitleCon">
-			<h4 class="bold">Corporate Governance</h4>
+			<h4 class="bold">$Fr1FrameTitle</h4>
 		</div>
 		<div class="display--flex justify--between gen__tabCon">
 			<div class="gen__sideNav align-c">
 				<select>
-					<option data-tab-target="1">Test</option>
-					<option data-tab-target="2">Test2</option>
+					<% loop Articles %>
+						<option data-tab-target="$ID">$GenArTitle</option>
+					<% end_loop %>
 				</select>
 				<ul>
-					<li class="active" data-tab-target="1">
+					<% loop Articles %>
+					<li data-tab-target="$ID">
 						<div class="vertical-parent">
 							<div class="vertical-align">
-								<p>Manual in Corporate Governance</p>
+								<p>$GenArTitle</p>
 							</div>
 						</div>
 					</li>
-					<li data-tab-target="2">
-						<div class="vertical-parent">
-							<div class="vertical-align">
-								<p>Manual in Corporate</p>
-							</div>
-						</div>
-					</li>
+					<% end_loop %>
 				</ul>
 			</div>
 			<div class="gen__article">
-				<div class="gen__tabList" data-tab-list="1">
-					<h5><strong>Manual on Corporate Governance</strong></h5>
-					<p><a href="#">Corporate</a></p>
+				<% loop Articles %>
+				<div class="gen__tabList" data-tab-list="$ID">
+					$GenArDesc
 				</div>
-				<div class="gen__tabList" data-tab-list="2">
-					<h5><strong>Manual on Corporate</strong></h5>
-					<p><a href="#">Corporate</a></p>
-				</div>
+				<% end_loop %>
 			</div>
 		</div>
 	</div>
 	<div class="gen__BGHolder">
-		<div class="gen__BGCon" style="background-image: url('$ThemeDir/images/about/MaskBG.png')"></div>
+		<div class="gen__BGCon" style="background-image: url('$Fr1BG.URL')"></div>
 	</div>
 </section>

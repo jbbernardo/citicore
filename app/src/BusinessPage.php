@@ -39,21 +39,24 @@ namespace {
 
 		private static $db = [
 		
-			/*Frame 2*/
+			/*Frame 1*/
+			'Fr1FrameTitle' => 'Text',
+			'Fr1FrameDesc' => 'Text',
+			'Fr1BtnText' => 'Text',
+			'Fr1BtnLinkTo' => 'Text',
 
 		];
 
 		private static $has_one = [
-
-
+			'Fr1BG' => Image::class,
 		];
 
 		private static $has_many = [
+			'FeatureLists' => FeatureList::class,
 		];
 
 		private static $owns = [
-
-
+			'Fr1BG',
 		];
 
 		private static $allowed_children = "none";
@@ -72,27 +75,37 @@ namespace {
 			|-----------------------------------------------
 			| @Frame 1
 			|----------------------------------------------- */
-			
-
-
+			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
+				new Tab('Text',
+					TextField::create('Fr1FrameTitle', 'Title'),
+					TextareaField::create('Fr1FrameDesc', 'Description')
+				),
+				new Tab('Button',
+					TextField::create('Fr1BtnText', 'Button Label'),
+					TextField::create('Fr1BtnLinkTo', 'Button Link To')
+				),
+				new Tab('Image',
+					$uploadf1 = UploadField::create('Fr1BG','Background Image')
+				),
+				new Tab('List',
+					GridField::create('FeatureLists', 'Feature Lists', 
+						$this->FeatureLists(), 
+					GridFieldConfig_RecordEditor::create(10)
+					->addComponent(new GridFieldSortableRows('SortOrder'))
+					)
+				)
+			));
 
 
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
-			
-
-			/**
-			* EMAIL RECEIPIENT : Text Field
-			* - Flexibility purpose; to change email with ease.
-			*/
-			/*$fields->addFieldsToTab('Root.Email Recipient', array(
-				$desc = new TextField('Test', 'Email Address'),
-			));*/
 
 			# SET FIELD DESCRIPTION 
+			$uploadf1->setDescription('Max file size: 1MB | Dimension: At Least 1300px x 600px');
 			
 			
 			# Set destination path for the uploaded images.
+			$uploadf1->setFolderName('business/titlePage');
 			
 
 			return $fields;

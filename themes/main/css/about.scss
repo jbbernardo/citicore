@@ -170,6 +170,7 @@
 
 		.abtBD-modal__imgCon {
 			height: 535px;
+			@extend %bg-center-cover-nr;
 			background-position: top center;
 		}
 
@@ -198,6 +199,11 @@
 
 	.gen__BGHolder {
 		height: 110%;
+	}
+
+	.gen__BGCon {
+		top: unset;
+		bottom: -200px;
 	}
 }
 
@@ -237,6 +243,10 @@
 			i {
 				transform: scale(-1);
 			}
+		}
+
+		h4, i {
+			cursor: pointer;
 		}
 	}
 
