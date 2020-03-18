@@ -49,6 +49,9 @@ namespace {
             'PrjFTSrcTitle' => 'Text',
             'PrjFTSrcDesc' => 'Text',
 
+            'PrjFTAreTitle' => 'Text',
+            'PrjFTAreDesc' => 'Text',
+
             'PrjFTConTitle' => 'Text',
             'PrjFTConPerson' => 'Text',
             'PrjFTConNumber' => 'Text',
@@ -63,6 +66,7 @@ namespace {
             'PrjFTCapImg' => Image::class,
             'PrjFTGFAImg' => Image::class,
             'PrjFTSrcImg' => Image::class,
+            'PrjFTAreImg' => Image::class,
             'PrjFTConImg' => Image::class,
         ];
 
@@ -74,6 +78,7 @@ namespace {
             'PrjFTCapImg',
             'PrjFTGFAImg',
             'PrjFTSrcImg',
+            'PrjFTAreImg',
             'PrjFTConImg',
         ];
 
@@ -113,6 +118,10 @@ namespace {
             $fields->addFieldToTab('Root.Source', TextareaField::create('PrjFTSrcDesc', 'Description'));
             $fields->addFieldToTab('Root.Source', $uploadf5 = UploadField::create('PrjFTSrcImg','Icon'));
 
+            $fields->addFieldToTab('Root.Area', $labelf7 = TextField::create('PrjFTAreTitle', 'Title'));
+            $fields->addFieldToTab('Root.Area', TextareaField::create('PrjFTAreDesc', 'Description'));
+            $fields->addFieldToTab('Root.Area', $uploadf7 = UploadField::create('PrjFTAreImg','Icon'));
+
             $fields->addFieldToTab('Root.Contact', $labelf6 = TextField::create('PrjFTConTitle', 'Title'));
             $fields->addFieldToTab('Root.Contact', TextField::create('PrjFTConPerson', 'Person'));
             $fields->addFieldToTab('Root.Contact', TextField::create('PrjFTConNumber', 'Number'));
@@ -130,6 +139,7 @@ namespace {
             $labelf4->setDescription('Title is "GFA" by default');
             $labelf5->setDescription('Title is "Source" by default');
             $labelf6->setDescription('Title is "Contact" by default');
+            $labelf7->setDescription('Title is "Areas to be Powered" by default');
 
 
             $upload->setDescription('Max file size: 1MB | Dimension: At Least 60px x 460px');
@@ -140,6 +150,7 @@ namespace {
             $uploadf4->setDescription('Already have an icon by default || Max file size: 1MB | Dimension: At Least 25px x 25px');
             $uploadf5->setDescription('Already have an icon by default || Max file size: 1MB | Dimension: At Least 25px x 25px');
             $uploadf6->setDescription('Already have an icon by default || Max file size: 1MB | Dimension: At Least 25px x 25px');
+            $uploadf7->setDescription('Already have an icon by default || Max file size: 1MB | Dimension: At Least 25px x 25px');
 
             $upload->setFolderName('projectPage/list');
 
@@ -149,6 +160,7 @@ namespace {
             $uploadf4->setFolderName('projectPage/icon');
             $uploadf5->setFolderName('projectPage/icon');
             $uploadf6->setFolderName('projectPage/icon');
+            $uploadf7->setFolderName('projectPage/icon');
 
             return $fields;
         }

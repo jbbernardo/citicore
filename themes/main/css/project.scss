@@ -30,12 +30,12 @@
 	}
 
 	.prj1__detailsCon {
-
+		margin: 0 -35px;
 	}
 
 	.prj1__detailsListCon {
 		width: 23%;
-		margin: 0 -35px;
+		margin-bottom: 20px;
 
 		.prj1__dtlsImgCon {
 			width: 25px;
@@ -54,6 +54,16 @@
 
 			p {
 
+			}
+
+			a {
+				color: $color--black;
+				text-decoration: unset;
+				@extend %trans-ease;
+
+				&:hover {
+					color: $color--yellow;
+				}
 			}
 		}
 	}
