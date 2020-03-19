@@ -45,6 +45,9 @@
 						<label for="message">Message</label>
 						<textarea id="message" name="clientMessage" class="frm-form__input textarea" required></textarea>
 					</div>
+					<div class="recaptcha-hldr m-margin-b">
+						<div class="g-recaptcha" data-sitekey="6LdeXuIUAAAAAHRBoW9M3bHhFxCm-1eU0VMMDQ5y"></div>
+					</div>
 					<div class="cnct2__btnCon">
 						<button id="contactBtn" class="btn type-yellow">Submit</button>
 						<input type="hidden" name="postFlag" value="1">

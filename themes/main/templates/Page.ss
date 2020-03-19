@@ -66,6 +66,9 @@
         <![endif]-->
 
         <link rel="stylesheet" href="$ThemeDir/assets/app.css">
+
+        <!-- Recaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
     </head>
     <body class="">
         <!--[if lt IE 8]>
