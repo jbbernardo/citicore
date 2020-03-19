@@ -39,14 +39,17 @@ namespace {
 
 		private static $db = [
 		
-			
+			'Fr1Title' => 'Text',
+			'Fr1Desc' => 'HTMLText',
+
+			'Fr2Title' => 'Text',
+			'Fr2Desc' => 'HTMLText',	
 
 		];
 
 		private static $has_one = [
-
-			
-
+			'Fr1Bg' => Image::class, 
+			'Fr1Img' => Image::class,
 		];
 
 		private static $has_many = [
@@ -54,9 +57,8 @@ namespace {
 		];
 
 		private static $owns = [
-
-			
-
+			'Fr1Bg',
+			'Fr1Img',
 		];
 
 		private static $allowed_children = "none";
@@ -75,7 +77,27 @@ namespace {
 			|-----------------------------------------------
 			| @Frame 1
 			|----------------------------------------------- */
-			
+		
+			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
+				new Tab('General',
+					TextField::create('Fr1Title', 'Title'),
+					HTMLEditorField::create('Fr1Desc', 'Description'),
+					$uploadf1 = UploadField::create('Fr1Bg','Background Image'),
+					$uploadf2 = UploadField::create('Fr1Img','Rounded Image')
+				)
+			));
+
+			/*
+			|-----------------------------------------------
+			| @Frame 1
+			|----------------------------------------------- */
+		
+			$fields->addFieldToTab('Root.Frame2', new TabSet('Frame2Sets',
+				new Tab('General',
+					TextField::create('Fr2Title', 'Title'),
+					HTMLEditorField::create('Fr2Desc', 'Description')
+				)
+			));
 
 
 
