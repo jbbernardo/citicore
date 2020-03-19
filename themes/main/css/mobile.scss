@@ -16,24 +16,79 @@
 	=================================================================================*/
 	.hdr-frame {
 
+		&.changeHeader {
+
+			.hdr__topCon {
+				background-color: transparent;
+			}
+
+			.hdr__midCon .hdr__link {
+				&.section>a, &:hover>a {
+					color: $color--black;
+					font-weight: normal;
+
+				}
+			}
+
+			.hdr__botCon {
+				display: none;
+			}
+		}
+
 		.hdr__topCon {
-			position: fixed;
-			bottom: 20px;
+			position: unset;
+			bottom: unset;
 			z-index: 101;
 			width: 100%;
 			margin: auto;
 			opacity: 0;
 			transition-delay: -1s;
 			pointer-events: none;
+			background-color: transparent;
+
+			&.desktop {
+				display: none;
+			}
+
+			&.mobile {
+				display: block;
+			}
 
 			&.active {
+				height: 50%;
 				opacity: 1;
 				pointer-events: auto;
 				transition-delay: 0.3s;
 			}
 
 			.width--90 {
-				text-align: center;
+				display: block;
+				height: auto;
+
+				.width--auto:nth-child(1) {
+					margin-top: 30px
+				}
+
+				.width--auto:nth-child(2) {
+					margin-top: 35px;
+
+					a {
+						color: $color--red;
+						font-size: $font-size-small;
+					}
+				}
+			}
+
+			.hdr__cntctLink {
+				display: block;
+
+				i {
+					color: $color--red;
+				}
+
+				+ span {
+					display: none;
+				}
 			}
 
 			a {
@@ -47,15 +102,20 @@
 			.hdr__link {
 				display: block;
 				color: #5C5C5C;
-				text-align: center;
-				margin: 10px 0;
+				width: 90%;
+				margin: 10px auto;
 
 				&:nth-child(4) {
-					width: 100%;
+					width: 90%;
 				}
 
-				a {
-					font-size: 1rem;
+				> a {
+					font-size: $font-size-small;
+				}
+
+				&:hover>a {
+					color: $color--black;
+					font-weight: normal;
 				}
 			}
 
@@ -70,17 +130,48 @@
 			ul.inlineBlock-parent {
 				position: fixed;
 				z-index: 100;
-				top: 85px;
+				top: 80px;
 				left: 0;
-				height: calc(100% - 75px);
 				width: 100%;
+				height: calc(100% - 80px);
+				padding: 20px 0 70px;
 				background-color: #ffffff;
 				transform: translateX(-100%);
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+
+			.hdr__subLinkCon {
+				display: block;
+				position: unset;
+				box-shadow: unset;
+				background-color: transparent;
+				transform: unset;
+				padding-left: 30px;
+
+				.hdr__subLink {
+					height: auto;
+					border-bottom: unset;
+
+					a {
+						padding: 0;
+						font-size: $font-size-default;
+						text-transform: uppercase;
+					}
+				}
 			}
 		}
 
 		.hdr__botCon {
-			display: flex;
+			display: none;
+		}
+
+		.desktop {
+			display: none;
+		}
+
+		.mobile {
+			display: block;
 		}
 	}
 

@@ -37,6 +37,7 @@ namespace {
 
         private static $has_one = [
             'CorporateGovernancePage' => 'CorporateGovernancePage',
+            'SustainabilityGenericPage' => 'SustainabilityGenericPage',
         ];
 
         private static $owns = [
@@ -56,6 +57,7 @@ namespace {
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('GenArDesc', 'Content'));
 
             $fields->removeByName('CorporateGovernancePageID');
+            $fields->removeByName('SustainabilityGenericPageID');
             $fields->removeByName('SortOrder');
 
             return $fields;

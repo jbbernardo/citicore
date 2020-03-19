@@ -1,4 +1,4 @@
-<div class="hdr__subNav">
+<%-- <div class="hdr__subNav">
 	<div class="frm-cntnr width--85 align-c">
 		<div class="vertical-parent">
 			<div class="vertical-align inlineBlock-parent">
@@ -10,4 +10,17 @@
 			</div>
 		</div>
 	</div>
+</div> --%>
+<% loop $Menu(2) %>
+<div class="hdr__subNav <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
+	<div class="frm-cntnr width--85 align-c">
+		<div class="vertical-parent">
+			<div class="vertical-align inlineBlock-parent">
+			<% loop $Children %>
+				<p class="<% if Title = Title %>active<% end_if %>"><a href="$Link">$Title</a></p>
+			<% end_loop %>
+			</div>
+		</div>
+	</div>
 </div>
+<% end_loop %>

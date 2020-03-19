@@ -1,5 +1,5 @@
 <% include HeaderSpaceContent %>
-<% include SubNav %>
+<% include SubNavSus %>
 <section class="cmmnty--frm1">
 	<div class="gen__withBG frm-cntnr width--85">
 		<div class="width--100 inlineBlock-parent">
