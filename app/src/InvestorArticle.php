@@ -35,21 +35,22 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class CommunitiesPage extends Page {
+	class InvestorArticle extends Page {
 
 		private static $db = [
 		
-			'Fr1Title' => 'Text',
-			'Fr1Desc' => 'HTMLText',
-
-			'Fr2Title' => 'Text',
-			'Fr2Desc' => 'HTMLText',	
+			/*News*/
+			'NewsTitle' => 'Text',
+			'FName' => 'Text',
+			'Date' => 'Text',
+			'Desc' => 'HTMLText',
+			
 
 		];
 
 		private static $has_one = [
-			'Fr1Bg' => Image::class, 
-			'Fr1Img' => Image::class,
+			'F1BG' => Image::class,
+			'File1' => File::class,
 		];
 
 		private static $has_many = [
@@ -57,15 +58,15 @@ namespace {
 		];
 
 		private static $owns = [
-			'Fr1Bg',
-			'Fr1Img',
+			'F1BG',
+			'File1',
 		];
 
-		private static $allowed_children = "none";
+		private static $allowed_children = 'none';
 
 		private static $defaults = array(
-			'PageName' => 'Communities Page',
-			'MenuTitle' => 'Communities Center',
+			'PageName' => 'Article',
+			'MenuTitle' => 'Article',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -75,29 +76,28 @@ namespace {
 
 			/*
 			|-----------------------------------------------
-			| @Frame 1
+			| @Frame1
 			|----------------------------------------------- */
-		
-			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
-				new Tab('General',
-					TextField::create('Fr1Title', 'Title'),
-					HTMLEditorField::create('Fr1Desc', 'Description'),
-					$uploadf1 = UploadField::create('Fr1Bg','Background Image'),
-					$uploadf2 = UploadField::create('Fr1Img','Rounded Image')
-				)
+			$fields->addFieldsToTab('Root.ArticleDetails.Main', array(
+				$uploadf1 = UploadField::create('F1BG','Banner'),
+				new TextField('NewsTitle', 'Article Title'),
+				new TextField('Date', 'Date'),
+				new HTMLEditorField('Desc', 'Description'),
+			));
+			# SET FIELD DESCRIPTION 
+			$uploadf1->setDescription('Max file size: 2MB | Dimension: 1366px x 768px');
+			# Set destination path for the uploaded images.
+			$uploadf1->setFolderName('Investor/Article');
+
+			$fields->addFieldsToTab('Root.FileDownloadables.Main', array(
+				new TextField('FName', 'File Name'),
+				$uploadf2 = UploadField::create('File1','PDF File'),
 			));
 
-			/*
-			|-----------------------------------------------
-			| @Frame 1
-			|----------------------------------------------- */
-		
-			$fields->addFieldToTab('Root.Frame2', new TabSet('Frame2Sets',
-				new Tab('General',
-					TextField::create('Fr2Title', 'Title'),
-					HTMLEditorField::create('Fr2Desc', 'Description')
-				)
-			));
+			# SET FIELD DESCRIPTION 
+			$uploadf2->setDescription('Max file size: 20MB | PDF Only');
+			# Set destination path for the uploaded images.
+			$uploadf2->setFolderName('Investor/Downloadables');
 
 
 
@@ -117,10 +117,19 @@ namespace {
 		}
 	}
 
-	class CommunitiesPageController extends PageController {
+	class InvestorArticleController extends PageController {
 		
 		public function init() {
 			parent::init();
+
+
+			/*REDIRECT TO CHILDREN*/
+
+			// if (empty($this->Content)) {
+			// 	if($this->Children()->Count()){
+			// 		return $this->redirect($this->Children()->First()->AbsoluteLink());
+			// 	}
+			// }
 			
 		}
 	}

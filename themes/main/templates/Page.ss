@@ -145,6 +145,15 @@
         <script type="text/javascript" src="$ThemeDir/assets/app.js"></script>
         <script type="text/javascript" src="$ThemeDir/assets/script.js"></script>
 
+        <!-- File Upload -->
+        <script src="$ThemeDir/js/vendor/jquery.ui.widget.js"></script>
+        <script src="$ThemeDir/js/vendor/jquery.iframe-transport.js"></script>
+        <script src="$ThemeDir/js/vendor/jquery.fileupload.js"></script>
+        <!--  -->
+
+        <!-- Vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
         <!-- Validate -->
         <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 

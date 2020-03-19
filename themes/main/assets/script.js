@@ -25,6 +25,12 @@ var app = {
 			case 'CommunitiesPage':
 				setup.communitiespage();
 				break;
+			case 'InvestorCenterCategoryPage':
+				setup.investorcentercategorypage();
+				break;
+			case 'Career':
+				setup.career();
+				break;
 		}
 
 		setup.menu();
@@ -353,6 +359,43 @@ var app = {
 					triggerHook: .7,
 					reverse: false
 				}).setTween(tl).addTo(controller);
+			});
+		},
+
+		investorcentercategorypage: function () {
+			$('.sidebar_category.current .sidebar_subcat:first').addClass('active');
+			$('.article-cntnr').hide();
+			$('.article-cntnr:first').show();
+			$('.sidebar_category.current .sidebar_subcat').on('click', function () {
+				$('.sidebar_category.current .sidebar_subcat').removeClass('active');
+				$(this).addClass('active');
+				$('.article-cntnr').hide();
+				var yow = $(this).find('a').attr('value');
+				$(yow).fadeIn();
+				return false;
+			});
+		},
+
+		career: function () {
+			app.form.init($('#applyForm'), $('#applyBtn'), 'form/apply/send', false);
+
+			$('.upload-hldr').fileupload({
+				url: baseHref + 'form/apply/upload',
+				dataType: 'json',
+				submit: function (e, data) {},
+				done: function (e, data) {
+					switch (data.result.response) {
+						case 0:
+							break;
+						case 1:
+
+							$('#file-image').val(data.result.message);
+							$('#maskfile-image').val(data.result.message);
+							$('#file-selected').html(data.result.filename);
+
+							break;
+					}
+				}
 			});
 		},
 

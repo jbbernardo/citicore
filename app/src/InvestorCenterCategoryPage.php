@@ -60,7 +60,7 @@ namespace {
 		];
 
 		private static $allowed_children = array(
-			'InvestorCenterListPage',
+			'InvestorCenterSubCategoryPage',
 		);
 
 		private static $defaults = array(
@@ -99,5 +99,18 @@ namespace {
 
 	class InvestorCenterCategoryPageController extends PageController {
 		
+		public function init() {
+			parent::init();
+
+
+			/*REDIRECT TO CHILDREN*/
+
+			// if (empty($this->Content)) {
+			// 	if($this->Children()->Count()){
+			// 		return $this->redirect($this->Children()->First()->AbsoluteLink());
+			// 	}
+			// }
+			
+		}
 	}
 }

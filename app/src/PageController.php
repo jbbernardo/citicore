@@ -52,8 +52,8 @@ namespace {
             return InvestorCenterCategoryPage::get();
         }
 
-        public function getInvestorCenterListPage() {
-            return InvestorCenterListPage::get();
+        public function getInvestorSubCategoryPage() {
+            return InvestorSubCategoryPage::get();
         }
 
         public function getStore() {

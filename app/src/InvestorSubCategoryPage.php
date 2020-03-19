@@ -35,21 +35,18 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class CommunitiesPage extends Page {
+	class InvestorCenterSubCategoryPage extends Page {
 
 		private static $db = [
 		
-			'Fr1Title' => 'Text',
-			'Fr1Desc' => 'HTMLText',
-
-			'Fr2Title' => 'Text',
-			'Fr2Desc' => 'HTMLText',	
+			
 
 		];
 
 		private static $has_one = [
-			'Fr1Bg' => Image::class, 
-			'Fr1Img' => Image::class,
+
+			
+
 		];
 
 		private static $has_many = [
@@ -57,15 +54,18 @@ namespace {
 		];
 
 		private static $owns = [
-			'Fr1Bg',
-			'Fr1Img',
+
+			
+
 		];
 
-		private static $allowed_children = "none";
+		private static $allowed_children = array(
+			'InvestorArticle',
+		);
 
 		private static $defaults = array(
-			'PageName' => 'Communities Page',
-			'MenuTitle' => 'Communities Center',
+			'PageName' => 'Investor Center Sub Category Page',
+			'MenuTitle' => 'Investor Center Sub Category',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -77,27 +77,7 @@ namespace {
 			|-----------------------------------------------
 			| @Frame 1
 			|----------------------------------------------- */
-		
-			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
-				new Tab('General',
-					TextField::create('Fr1Title', 'Title'),
-					HTMLEditorField::create('Fr1Desc', 'Description'),
-					$uploadf1 = UploadField::create('Fr1Bg','Background Image'),
-					$uploadf2 = UploadField::create('Fr1Img','Rounded Image')
-				)
-			));
-
-			/*
-			|-----------------------------------------------
-			| @Frame 1
-			|----------------------------------------------- */
-		
-			$fields->addFieldToTab('Root.Frame2', new TabSet('Frame2Sets',
-				new Tab('General',
-					TextField::create('Fr2Title', 'Title'),
-					HTMLEditorField::create('Fr2Desc', 'Description')
-				)
-			));
+			
 
 
 
@@ -117,10 +97,19 @@ namespace {
 		}
 	}
 
-	class CommunitiesPageController extends PageController {
+	class InvestorCenterSubCategoryPageController extends PageController {
 		
 		public function init() {
 			parent::init();
+
+
+			/*REDIRECT TO CHILDREN*/
+
+			// if (empty($this->Content)) {
+			// 	if($this->Children()->Count()){
+			// 		return $this->redirect($this->Children()->First()->AbsoluteLink());
+			// 	}
+			// }
 			
 		}
 	}

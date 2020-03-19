@@ -35,21 +35,28 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class CommunitiesPage extends Page {
+	class CareerPage extends Page {
 
 		private static $db = [
-		
-			'Fr1Title' => 'Text',
-			'Fr1Desc' => 'HTMLText',
 
-			'Fr2Title' => 'Text',
-			'Fr2Desc' => 'HTMLText',	
+			'EmailRecipient' => 'Text',
+
+
+			'F1Header' => 'Text',
+
+
+			'CF1Header' => 'Text',
+			'CF1Desc' => 'Text',
+		
+			
 
 		];
 
 		private static $has_one = [
-			'Fr1Bg' => Image::class, 
-			'Fr1Img' => Image::class,
+			'F1BG' => Image::class,
+			'File1' => File::class,
+			
+
 		];
 
 		private static $has_many = [
@@ -57,15 +64,17 @@ namespace {
 		];
 
 		private static $owns = [
-			'Fr1Bg',
-			'Fr1Img',
+			'F1BG',
+			'File1',
 		];
 
-		private static $allowed_children = "none";
+		private static $allowed_children = array(
+			'Career',
+		);
 
 		private static $defaults = array(
-			'PageName' => 'Communities Page',
-			'MenuTitle' => 'Communities Center',
+			'PageName' => 'Career Page',
+			'MenuTitle' => 'Career Page',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -73,35 +82,43 @@ namespace {
 		public function getCMSFields() {
 			$fields = parent::getCMSFields();
 
-			/*
-			|-----------------------------------------------
-			| @Frame 1
-			|----------------------------------------------- */
-		
-			$fields->addFieldToTab('Root.Frame1', new TabSet('Frame1Sets',
-				new Tab('General',
-					TextField::create('Fr1Title', 'Title'),
-					HTMLEditorField::create('Fr1Desc', 'Description'),
-					$uploadf1 = UploadField::create('Fr1Bg','Background Image'),
-					$uploadf2 = UploadField::create('Fr1Img','Rounded Image')
-				)
-			));
+			
 
 			/*
 			|-----------------------------------------------
-			| @Frame 1
+			| @Frame1
 			|----------------------------------------------- */
-		
-			$fields->addFieldToTab('Root.Frame2', new TabSet('Frame2Sets',
-				new Tab('General',
-					TextField::create('Fr2Title', 'Title'),
-					HTMLEditorField::create('Fr2Desc', 'Description')
-				)
+			$fields->addFieldsToTab('Root.Frame1.Main', array(
+				$uploadf1 = UploadField::create('F1BG','Banner'),
+				new TextField('F1Header', 'Frame Title'),
 			));
+			# SET FIELD DESCRIPTION 
+			$uploadf1->setDescription('Max file size: 2MB | Dimension: 1366px x 768px');
+			# Set destination path for the uploaded images.
+			$uploadf1->setFolderName('careerpage/Banner');
+
+			/*
+			|-----------------------------------------------
+			| @Apply
+			|----------------------------------------------- */
+			$fields->addFieldsToTab('Root.Application.Main', array(
+				new TextField('CF1Header', 'Frame Title'),
+				new TextareaField('CF1Desc', 'Frame Description'),
+				$uploadf2 = UploadField::create('File1','Application Form'),
+			));
+			# SET FIELD DESCRIPTION 
+			$uploadf2->setDescription('Max file size: 2MB');
+			# Set destination path for the uploaded images.
+			$uploadf2->setFolderName('careerpage/applicationform');
 
 
 
 
+
+			#Email
+			$fields->addFieldsToTab('Root.Email.Main', array(
+				new TextField('EmailRecipient', 'Email Recipient'),
+			));
 
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
@@ -117,10 +134,19 @@ namespace {
 		}
 	}
 
-	class CommunitiesPageController extends PageController {
+	class CareerPageController extends PageController {
 		
 		public function init() {
 			parent::init();
+
+
+			/*REDIRECT TO CHILDREN*/
+
+			// if (empty($this->Content)) {
+			// 	if($this->Children()->Count()){
+			// 		return $this->redirect($this->Children()->First()->AbsoluteLink());
+			// 	}
+			// }
 			
 		}
 	}

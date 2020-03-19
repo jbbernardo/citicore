@@ -2,14 +2,10 @@
 <html>
 	<head>
 		<style>
-			@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro");
+			@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed");
 			
 			html {
-				font-family: 'Source Serif Pro', serif;
-			}
-			
-			body {
-				background: #ececec;
+				font-family: 'Barlow Semi Condensed', sans-serif;
 			}
 
 			/** 
@@ -57,7 +53,7 @@
 			}
 
 			.email-template__logo {
-				max-width: 150px;
+				max-width: 250px;
 			}
 
 			.email-template__description {
@@ -66,7 +62,7 @@
 			}
 
 			.email-template__description > * {
-				font-size: 1em;
+				font-size: 1.1em;
 			}
 
 		</style>
@@ -76,21 +72,18 @@
 			<div class="email-template__card">
 				<div class="email-template__card-limit">
 					<div class="email-template__header">
-						<h1>F-Tech</h1>
+						<img class="email-template__logo" src="">
 					</div>
 					<div class="email-template__description">
 						<br>
-						<p class="color--gray">MESSAGE DETAILS</p>
+						<p class="color--gray">Hi {$firstname},</p>
 						<br>
-						<p class="color--gray">First Name : {$clientName}</p>
-						<p class="color--gray">Email : {$clientEmail}</p>
-						<!-- <p class="color--gray">Contact : {$phone}</p> -->
-						<p class="color--gray">Message : {$clientMessage}</p>
+						<p class="color--gray">Your Application has been confirmed. You've been added to our list and will hear from us soon.</p>
+
 						<br>
 						<br>
-						<p class="color--gray">Thank You,</p>
+						<p class="color--gray">Thank You</p>
 						<p class="color--gray">Best Regards</p>
-						<p class="color--gray" style="font-weight: bold;">F-Tech Team</p>
 					</div>
 				</div>
 			</div>

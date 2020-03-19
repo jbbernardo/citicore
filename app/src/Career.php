@@ -3,8 +3,8 @@
 namespace {
 	use SilverStripe\CMS\Model\SiteTree;
 
-	use Page;  
-	use PageController;
+	// use Page;  
+	// use PageController;
 
 	use SilverStripe\Forms\TabSet;
 	use SilverStripe\Forms\Tab;
@@ -35,18 +35,21 @@ namespace {
 
 	use SilverStripe\Control\HTTPRequest;
 
-	class InvestorCenterListPage extends Page {
+	class Career extends Page {
 
 		private static $db = [
-		
-			'ArticleTitle' => 'Text',
-			'ArticleYear' => 'Date',
+			#Specialty
+			'SortID' => 'Int',
+			'JobTitle' => 'Text',
+			'JobLoc' => 'Text',
+			'ResDesc' => 'HTMLText',
+			'ReqDesc' => 'HTMLText',
 
 		];
 
 		private static $has_one = [
 
-			'ArticleImage' => Image::class,
+			
 
 		];
 
@@ -56,15 +59,15 @@ namespace {
 
 		private static $owns = [
 
-			'ArticleImage'
+			
 
 		];
 
 		private static $allowed_children = "none";
 
 		private static $defaults = array(
-			'PageName' => 'Investor Center List Page',
-			'MenuTitle' => 'Investor Center List',
+			'PageName' => 'Career',
+			'MenuTitle' => 'Career',
 			'ShowInMenus' => true,
 			'ShowInSearch' => true,
 		);
@@ -74,35 +77,26 @@ namespace {
 
 			/*
 			|-----------------------------------------------
-			| @Article
+			| @Frame1
 			|----------------------------------------------- */
-			$fields->addFieldToTab('Root.Article', new TabSet('ArticleSets',
-				new Tab('Text',
-					TextField::create('ArticleTitle', 'Article Title'),
-					new DateField('ArticleYear', 'Date')
-				),
-				new Tab('Image',
-					$uploadf1 = UploadField::create('ArticleImage','Article Banner Image')
-				)
+			$fields->addFieldsToTab('Root.Career.Main', array(
+				new TextField('JobTitle', 'Job Title'),
+				new TextField('JobLoc', 'Job Location'),
+				new HTMLEditorField('ResDesc', 'Responsibilities'),
+				new HTMLEditorField('ReqDesc', 'Requirements'),
 			));
 
 
 			#Remove by tab
 			$fields->removeFieldFromTab('Root.Main', 'Content');
 
-
-			# SET FIELD DESCRIPTION 
-			$uploadf1->setDescription('Max file size: 1MB | Dimension: At Least 300px x 170px');
-			
-			
-			# Set destination path for the uploaded images.
-			$uploadf1->setFolderName('investorCenter/view/article');
-
 			return $fields;
 		}
 	}
 
-	class InvestorCenterListPageController extends PageController {
-		
+	class CareerController extends PageController {
+		public function init() {
+			parent::init();
+		}
 	}
 }
