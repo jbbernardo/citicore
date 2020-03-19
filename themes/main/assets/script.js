@@ -19,8 +19,12 @@ var app = {
 			case 'CompanyHistoryPage':
 				setup.companyhistorypage();
 				break;
+			case 'ContactPage':
+				setup.contactpage();
+				break;
 			case 'CommunitiesPage':
 				setup.communitiespage();
+				break;
 		}
 
 		setup.menu();
@@ -30,16 +34,37 @@ var app = {
 
 		menu: function () {
 
-			$('.hdr__link').click(function () {
+			$('.desktop .hdr__link').click(function () {
+
+				if ($(".desktop .hdr__link").hasClass('activeSub')) {
+					$('.desktop .hdr__link.activeSub').children(".hdr__subLinkCon").slideToggle(300);
+					$('.desktop .hdr__link.activeSub').toggleClass('activeSub');
+				} else {
+					$(this).toggleClass('activeSub');
+					$(this).children(".hdr__subLinkCon").slideToggle(300);
+				}
+			});
+
+			$(document).on('mouseup', function (e) {
+				if ($(e.target).closest(".desktop .hdr__link").length === 0) {
+					$('.desktop .hdr__link.activeSub').children(".hdr__subLinkCon").slideUp(300);
+					$('.desktop .hdr__link.activeSub').removeClass('activeSub');
+				}
+			});
+
+			$('.dropdown-submenu a.sub').on("click", function (e) {
+				$(this).next('ul').slideToggle(300);
+				e.stopPropagation();
+				e.preventDefault();
+			});
+
+			$('.mobile .hdr__link').click(function () {
 				$(this).toggleClass('activeSub');
 				$(this).children(".hdr__subLinkCon").slideToggle(300);
 			});
 
-			$(document).on('mouseup', function (e) {
-				if ($(e.target).closest(".hdr__link").length === 0) {
-					$('.hdr__link.activeSub').children(".hdr__subLinkCon").slideUp(300);
-					$('.hdr__link.activeSub').removeClass('activeSub');
-				}
+			$('.mobile .hdr__sublink').click(function () {
+				$(this).children(".hdr__subLink2Con").slideToggle(300);
 			});
 
 			$('#nav-icon').click(function () {
@@ -48,20 +73,21 @@ var app = {
 				$('.hdr__topCon').toggleClass('active');
 			});
 
-			$('.ftr__linkParent h6').on('click', function () {
+			// $('.ftr__linkParent h6').on('click', function(){
 
-				if ($(this).parent().hasClass('active')) {
+			// 	if ($(this).parent().hasClass('active')) {
 
-					$(this).parent().removeClass('active');
-					$(this).siblings('ul').slideUp(300);
-					$(this).removeClass('active');
-				} else {
+			// 		$(this).parent().removeClass('active');
+			// 		$(this).siblings('ul').slideUp(300);
+			// 		$(this).removeClass('active');
 
-					$(this).parent().addClass('active');
-					$(this).siblings('ul').slideDown(300);
-					$(this).addClass('active');
-				}
-			});
+			// 	} else {
+
+			// 		$(this).parent().addClass('active');
+			// 		$(this).siblings('ul').slideDown(300);
+			// 		$(this).addClass('active');
+			// 	}
+			// });
 
 			// 
 			// TABBING
@@ -396,6 +422,11 @@ var app = {
 				$(this).toggleClass('active');
 				$(this).next().slideToggle(300);
 			});
+		},
+
+		contactpage: function () {
+
+			app.form.init($('#contactForm'), $('#contactBtn'), 'form/contact/send', false);
 		},
 
 		communitiespage: function () {

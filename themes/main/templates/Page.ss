@@ -29,6 +29,8 @@
             $ExtraMeta
         <% end_if %>
 
+        <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --%>
+
         <%-- Font --%>
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaBasic/stylesheet.css">
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaBasicItalic/stylesheet.css">
@@ -37,7 +39,6 @@
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaLight/stylesheet.css">
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaLightItalic/stylesheet.css">
 
-        <link rel="stylesheet" href="$ThemeDir/assets/app.css">
         
         <!-- Ionicon -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
@@ -60,11 +61,11 @@
         <!-- SweetAlert -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
         
-        
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        <link rel="stylesheet" href="$ThemeDir/assets/app.css">
     </head>
     <body class="">
         <!--[if lt IE 8]>
@@ -128,10 +129,13 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <%--  --%>
 
+
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!-- Script -->
         <script type="text/javascript" src="$ThemeDir/assets/vendor.js"></script>
@@ -170,11 +174,40 @@
         <!-- HoverIntent -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.hoverintent/1.8.1/jquery.hoverIntent.min.js"></script>
         
-        <% if ClassName = 'ContactUs' %>
+        <% if ClassName = 'ContactPage' %>
         <!-- Storelocator -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKese9Nxt27v9smmicyvJ037PwXfGbe3E"></script>
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKese9Nxt27v9smmicyvJ037PwXfGbe3E"></script>
         <script type="text/javascript" src="$ThemeDir/js/vendor/chosen/chosen.jquery.min.js"></script>
-        <script type="text/javascript" src="$ThemeDir/js/storelocator.js"></script>
+        <script type="text/javascript" src="$ThemeDir/js/storelocator.js"></script> -->
+
+        <!-- GoogleMap -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdZmifNZogZcfRQ-wZy0B7yVVTd0cvPm4"></script>
+
+        <script type="text/javascript">
+            <% loop HeaderFooter %>
+            var mapLat = $latitude,
+                mapLng = $longitude
+            <% end_loop %>
+
+            var mapOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(mapLat, mapLng),
+                styles: []
+            };
+
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(mapElement, mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(mapLat, mapLng),
+                map: map,
+                title: 'Citicore',
+                <% loop HeaderFooter %>
+                    icon: '$mappin.URL',
+                <% end_loop %>
+                animation: google.maps.Animation.DROP,
+            });
+        </script>
+
         <% end_if %>
         
         <!-- Light Gallery -->

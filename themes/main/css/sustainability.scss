@@ -1,0 +1,100 @@
+/*
+* susGP : Sustainability Generic Page
+*/
+.susGP-frame1 {
+	position: relative;
+	padding: 70px 0;
+	min-height: 40vh;
+
+	.gen__BGHolder {
+		height: 120%;
+	}
+
+	h1 {
+		line-height: 48px;
+		margin-bottom: 30px;
+	}
+}
+
+.susGP-frame2 {
+	position: relative;
+	padding: 70px 0;
+
+	.susGP2__textcon {
+		img, table {
+			max-width: 100%;
+		}
+
+		a {
+			color: #0F54BC;
+			text-decoration: underline;
+			@extend %trans-ease;
+
+			&:hover {
+				color: $color--red;
+			}
+		}
+	}
+
+	.susGP2__imgCon {
+		width: 100%;
+		height: 0;
+		padding-top: 70%;
+		margin: 0 auto;
+		@extend %bg-center-cover-nr;
+	}
+
+	.gen__BGHolder {
+		height: 120%;
+		transform: skew(0deg,-2deg);
+		overflow: hidden;
+
+		.gen__grdtWhite {
+			top: -50px;
+			transform: skew(0deg,2deg);
+			background-color: $color--white;
+		}
+	}
+}
+
+.susGP-frame3 {
+	position: relative;
+	padding: 70px 0;
+	min-height: 50vh;
+
+	.gen__BGHolder {
+		height: 120%;
+		transform: skew(0deg,-2deg);
+		overflow: hidden;
+
+		.gen__grdtWhite {
+			top: -50px;
+			transform: skew(0deg,2deg);
+			background-color: $color--white;
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+	
+
+}
+
+@media screen and (max-width: 768px) {
+	
+	
+
+}
+
+@media screen and (max-width: 480px) {
+
+	
+
+}
+
+@media screen and (max-width: 320px) {
+	
+}

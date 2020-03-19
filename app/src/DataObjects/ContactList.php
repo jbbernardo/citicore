@@ -27,37 +27,32 @@ namespace {
     use SilverStripe\Control\Controller;
     use SilverStripe\Control\HTTPRequest;
 
-    class Article extends DataObject {
+    class ContactList extends DataObject {
 
         private static $db = [
             'SortOrder' => 'Int',
-            'GenArTitle' => 'Text',
-            'GenArDesc' => 'HTMLText',
+            'CLNumber' => 'Text',
         ];
 
         private static $has_one = [
-            'CorporateGovernancePage' => 'CorporateGovernancePage',
-            'SustainabilityGenericPage' => 'SustainabilityGenericPage',
+            'ContactPage' => 'ContactPage',
         ];
 
         private static $owns = [
-
 
         ];
 
         private static $summary_fields = [
             'SortOrder' => 'Sort Order',
-            'GenArTitle' => 'Name',
+            'CLNumber' => 'Title',
         ];
 
         public function getCMSFields() {
             $fields = parent::getCMSFields();
             $fields->addFieldToTab('Root.Main', ReadonlyField::create('SortOrder', 'Sort Order'));
-            $fields->addFieldToTab('Root.Main', TextField::create('GenArTitle', 'Article Title'));
-            $fields->addFieldToTab('Root.Main', HTMLEditorField::create('GenArDesc', 'Content'));
+            $fields->addFieldToTab('Root.Main', TextField::create('CLNumber', 'Number'));
 
-            $fields->removeByName('CorporateGovernancePageID');
-            $fields->removeByName('SustainabilityGenericPageID');
+            $fields->removeByName('ContactPageID');
             $fields->removeByName('SortOrder');
 
             return $fields;

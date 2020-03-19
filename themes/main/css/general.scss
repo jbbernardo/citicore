@@ -297,6 +297,14 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 	z-index: 100;
 	width: 100%;
 
+	.desktop {
+		display: block;
+	}
+
+	.mobile {
+		display: none;
+	}
+
 	&.changeHeader {
 
 		.hdr__topCon {
@@ -326,6 +334,14 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 		height: 30px;
 		background-color: transparent;
 		@extend %trans-ease;
+
+		&.desktop {
+			display: block;
+		}
+
+		&.mobile {
+			display: none;
+		}
 
 		a {
 			margin-left: 15px;
@@ -391,6 +407,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 			&:last-child {
 				margin-right: 0;
 			}
+
+			&.dropdown-toggle {
+
+				i {
+					color: $color--red;
+					margin-left: 5px;
+					@extend %trans-ease;
+				}
+
+				&.activeSub i {
+					transform: scale(1, -1);
+				}
+			}
 			
 			> a {
 				display:inline-block;
@@ -434,7 +463,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 					border-bottom: unset;
 				}
 
-				a {
+				> a {
 					display: block;
 					padding: 6px 15px;
 					text-align: left;
@@ -451,8 +480,32 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 			}
 		}
 
+		.hdr__subLink2Con {
+			display: none;
+			width: auto;
+			padding: 10px 0 10px 30px;
+
+			.hdr__subLink2 {
+
+				> a {
+					display: block;
+					text-align: left;
+					color: $color--black;
+					white-space: nowrap;
+					text-transform: none;
+				}
+			}
+		}
+
 		.to-Mob {
 			display: none;
+		}
+
+		.mobile {
+
+			.hdr__subLinkCon {
+				display: none;
+			}
 		}
 
 		ul.inlineBlock-parent {
@@ -472,7 +525,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 				position: absolute;
 				height: 5px;
 				width: 50%;
-				background: $color--green;
+				background: $color--red;
 				opacity: 1;
 				transform: rotate(0deg);
 				transition: .25s ease-in-out;
@@ -594,6 +647,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 	height: 50px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	background-color: $color--white;
+	display: none;
+
+	&.section, &.active {
+		display: block;
+	}
 
 	p {
 		font-size: $font-size-smallest;
@@ -969,13 +1027,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 .frm-form__holder {
 	.frm-form__row {
 		position: relative;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 
 		label {
 			display: block;
 			font-family: $font--1;
 			font-size: $font-size-smallest;
-			color: $color--primary1;
+			color: #5C5C5C;
 			text-transform: uppercase;
 		}
 
@@ -993,19 +1051,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 			height: 40px;
 			font-size: 16px;
 			font-family: $font--1;
-			color: #000;
+			color: $color--black;
 			padding: 10px 12px;
 			box-sizing: border-box;
-			background: rgba(0,0,0,0.08);
+			background-color: $color--white;
 			border: none;
-			border: 1px solid rgba(0,0,0,0.08);
+			border: 1px solid $color--lighterGray;
 			@extend %trans-ease;
 
 			&::placeholder { font-size: 13px; }
 			&:focus,
 			&:active,
 			&:visited {
-				border: 1px solid $color--primary1;
+				border: 1px solid $color--lighterGray;
 			}
 
 			&.textarea { height: 120px; }
@@ -1347,6 +1405,20 @@ label.error {
 	padding-top: 20px;
 	padding-left: 50px;
 	box-sizing: border-box;
+
+	img, table {
+		max-width: 100%;
+	}
+
+	a {
+		color: #0F54BC;
+		text-decoration: underline;
+		@extend %trans-ease;
+
+		&:hover {
+			color: $color--red;
+		}
+	}
 
 	&.gen__project {
 		padding-top: 0;
