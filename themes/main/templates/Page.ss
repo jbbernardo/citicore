@@ -29,6 +29,8 @@
             $ExtraMeta
         <% end_if %>
 
+        <%-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --%>
+
         <%-- Font --%>
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaBasic/stylesheet.css">
         <link rel="stylesheet" href="$ThemeDir/fonts/flamaBasicItalic/stylesheet.css">
@@ -127,10 +129,13 @@
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <%--  --%>
 
+
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <!-- Script -->
         <script type="text/javascript" src="$ThemeDir/assets/vendor.js"></script>

@@ -298,11 +298,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 	width: 100%;
 
 	.desktop {
-		display: none;
+		display: block;
 	}
 
 	.mobile {
-		display: block;
+		display: none;
 	}
 
 	&.changeHeader {
@@ -407,6 +407,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 			&:last-child {
 				margin-right: 0;
 			}
+
+			&.dropdown-toggle {
+
+				i {
+					color: $color--red;
+					margin-left: 5px;
+					@extend %trans-ease;
+				}
+
+				&.activeSub i {
+					transform: scale(1, -1);
+				}
+			}
 			
 			> a {
 				display:inline-block;
@@ -468,9 +481,9 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 		}
 
 		.hdr__subLink2Con {
-			display: block;
+			display: none;
 			width: auto;
-			padding-left: 30px;
+			padding: 10px 0 10px 30px;
 
 			.hdr__subLink2 {
 
@@ -486,6 +499,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, small, strong, i, li {
 
 		.to-Mob {
 			display: none;
+		}
+
+		.mobile {
+
+			.hdr__subLinkCon {
+				display: none;
+			}
 		}
 
 		ul.inlineBlock-parent {

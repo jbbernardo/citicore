@@ -34,11 +34,11 @@ var app = {
 
 		menu: function () {
 
-			$('.hdr__link').click(function () {
+			$('.desktop .hdr__link').click(function () {
 
-				if ($(".hdr__link").hasClass('activeSub')) {
-					$('.hdr__link.activeSub').children(".hdr__subLinkCon").slideToggle(300);
-					$('.hdr__link.activeSub').toggleClass('activeSub');
+				if ($(".desktop .hdr__link").hasClass('activeSub')) {
+					$('.desktop .hdr__link.activeSub').children(".hdr__subLinkCon").slideToggle(300);
+					$('.desktop .hdr__link.activeSub').toggleClass('activeSub');
 				} else {
 					$(this).toggleClass('activeSub');
 					$(this).children(".hdr__subLinkCon").slideToggle(300);
@@ -46,10 +46,25 @@ var app = {
 			});
 
 			$(document).on('mouseup', function (e) {
-				if ($(e.target).closest(".hdr__link").length === 0) {
-					$('.hdr__link.activeSub').children(".hdr__subLinkCon").slideUp(300);
-					$('.hdr__link.activeSub').removeClass('activeSub');
+				if ($(e.target).closest(".desktop .hdr__link").length === 0) {
+					$('.desktop .hdr__link.activeSub').children(".hdr__subLinkCon").slideUp(300);
+					$('.desktop .hdr__link.activeSub').removeClass('activeSub');
 				}
+			});
+
+			$('.dropdown-submenu a.sub').on("click", function (e) {
+				$(this).next('ul').slideToggle(300);
+				e.stopPropagation();
+				e.preventDefault();
+			});
+
+			$('.mobile .hdr__link').click(function () {
+				$(this).toggleClass('activeSub');
+				$(this).children(".hdr__subLinkCon").slideToggle(300);
+			});
+
+			$('.mobile .hdr__sublink').click(function () {
+				$(this).children(".hdr__subLink2Con").slideToggle(300);
 			});
 
 			$('#nav-icon').click(function () {
@@ -58,20 +73,21 @@ var app = {
 				$('.hdr__topCon').toggleClass('active');
 			});
 
-			$('.ftr__linkParent h6').on('click', function () {
+			// $('.ftr__linkParent h6').on('click', function(){
 
-				if ($(this).parent().hasClass('active')) {
+			// 	if ($(this).parent().hasClass('active')) {
 
-					$(this).parent().removeClass('active');
-					$(this).siblings('ul').slideUp(300);
-					$(this).removeClass('active');
-				} else {
+			// 		$(this).parent().removeClass('active');
+			// 		$(this).siblings('ul').slideUp(300);
+			// 		$(this).removeClass('active');
 
-					$(this).parent().addClass('active');
-					$(this).siblings('ul').slideDown(300);
-					$(this).addClass('active');
-				}
-			});
+			// 	} else {
+
+			// 		$(this).parent().addClass('active');
+			// 		$(this).siblings('ul').slideDown(300);
+			// 		$(this).addClass('active');
+			// 	}
+			// });
 
 			// 
 			// TABBING
