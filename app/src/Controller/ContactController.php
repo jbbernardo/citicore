@@ -16,6 +16,7 @@ class ContactController extends Controller {
     private $clientMessage;
 
     private $errors;
+    private $captcha;
 
     public function init() {
         parent::init();
@@ -59,6 +60,9 @@ class ContactController extends Controller {
         if(isset($_POST['clientMessage'])) {
             $this->clientMessage = $_POST['clientMessage'];
         }
+        if(isset($_POST['g-recaptcha-response'])){
+            $this->captcha=$_POST['g-recaptcha-response'];
+        }
 
         return true;
 
@@ -86,17 +90,30 @@ class ContactController extends Controller {
         }
 
 
-        // switch ($this->postFlag) {
-        //     // Sending
-        //     case 1: break;
-        // }       
+        if(empty($_POST['g-recaptcha-response']) ) {
+            $this->errors = 'Please check the the captcha form';
+        }
 
-        // if(!empty(count($this->errors) > 0)) {
-        //     $this->returnEcho(0, 'Error');
+        $secretKey = "6LdeXuIUAAAAAIKzIoURa-CcHjh7sYy75eaoSiOZ";
+        $response = $this->postRecaptcha($secretKey, $this->captcha);
 
-        //     return false;
-        // }
- 
+        // should return JSON with success as true
+        if($response->success) {
+        } else {
+            $this->errors = 'CAPTCHA verification failed.';
+        }
+
+        switch ($this->postFlag) {
+            // Sending
+            case 1: break;
+        }
+
+        if(!empty(count($this->errors) > 0)) {
+            $this->returnEcho(0, explode(", ", $this->errors));
+
+            return false;
+        }
+
         return true;
 
     }
@@ -161,28 +178,31 @@ class ContactController extends Controller {
         // print_r('Emailing...' . $recipients);
         try {
 
-            $mail = new PHPMailer(true);  
-
-            $mail->SMTPDebug = 0;
-            $mail->SMTPAuth = true;
-            $mail->Host = 'email.praxxys.ph';
-            $mail->Username = 'mark.praxxys';
-            $mail->Password = '5xRaJCyQ6ddWRTeR';
-            $mail->Port = 587;
-
-            $mail->setFrom('no-reply@praxxys.ph', 'F-Tech Inquiry');
-
-            // Add in each recipient to the "TO"
+            $mail = new PHPMailer;
+            // Set PHPMailer to use the sendmail transport
+            $mail->isSendmail();
+            //Set who the message is to be sent from
+            $mail->setFrom('no-reply@citicore-cesi.com', 'www.citicore-cesi.com');
+            //Set an alternative reply-to address
+            $mail->addReplyTo('no-reply@citicore-cesi.com', 'www.citicore-cesi.com');
+            //Set who the message is to be sent to
             foreach ($recipients as $recipient) {
                 $mail->addAddress($recipient, $recipient);
             }
-
-            $mail->isSMTP();
+            //Set the subject line
             $mail->isHTML(true);
             $mail->Subject = $subject;
             $mail->Body = $body;
 
             $mail->send();
+            //send the message, check for errors
+            if (!$mail->send()) {
+                echo 'Mailer Error: '. $mail->ErrorInfo;
+            } else {
+                //echo 'Message sent!';
+            }
+
+            // print_r('Emailing done...');
 
             // print_r('Emailing done...');
 
@@ -199,6 +219,23 @@ class ContactController extends Controller {
             'status' => $status,
             'message' => $message
         ));
+    }
+
+    private function postRecaptcha($secret, $response) {
+
+        $data = array(
+            'secret' => $secret,
+            'response' => $response
+        );
+
+        $verify = curl_init();
+        curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        curl_setopt($verify, CURLOPT_POST, true);
+        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        return  json_decode(curl_exec($verify));
+
     }
 
 }
