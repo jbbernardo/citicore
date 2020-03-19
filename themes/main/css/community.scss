@@ -14,13 +14,16 @@
 			width: 60%;
 			height: 40vh;
 			border-radius: 50%;
-			background-color: red;
+			background-color: $color--white;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
 			margin: auto;
 		}
 	}
 
-	.frm-bckgrnds {
-		background-color: blue;
+	.gen__grdtWhite {
+		height: 100%;
 	}
 }
 
